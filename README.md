@@ -1,7 +1,3 @@
-from pathlib import Path
-
-readme_content = """# IS-MAN
-
 **IS-MAN: Intelligent Sonographic-MANipulation**  
 *A First-in-Clinical Large-Scale Study of LLM-Driven Embodied Intelligence for Fully Autonomous Robotic Ultrasound*
 
@@ -16,18 +12,19 @@ It integrates robot control, ultrasound image understanding, and clinical decisi
 
 ## 📁 Repository Structure
 
+```text
 IS-MAN/
-├── Azure_Kinect_ROS_Driver/ # Azure Kinect sensor integration
-├── OrbbecSDK_ROS1/ # Orbbec depth camera SDK for ROS1
-├── aruco_ros/ # ArUco marker-based localization and calibration
-├── easy_handeye/ # Eye-in-hand calibration utilities
-├── franka/ # Franka Emika robot configuration
-├── franka_ros/ # ROS driver for Franka robot
-├── franka_ros_interface/ # High-level ROS control interfaces
-├── robotiq_ft_sensor/ # Robotiq force-torque sensor driver
-├── vision_visp/ # Visual servoing modules (ViSP)
-├── franka.rviz # RViz visualization configuration
-└── README.md # Project documentation
+├── Azure_Kinect_ROS_Driver/      # Azure Kinect sensor integration
+├── OrbbecSDK_ROS1/               # Orbbec depth camera SDK for ROS1
+├── aruco_ros/                    # ArUco marker-based localization and calibration
+├── easy_handeye/                 # Eye-in-hand calibration utilities
+├── franka/                       # Franka Emika robot configuration
+├── franka_ros/                   # ROS driver for Franka robot
+├── franka_ros_interface/         # High-level ROS control interfaces
+├── robotiq_ft_sensor/            # Robotiq force-torque sensor driver
+├── vision_visp/                  # Visual servoing modules (ViSP)
+├── franka.rviz                   # RViz visualization configuration
+└── README.md                     # Project documentation
 
 
 ---
@@ -50,6 +47,7 @@ git clone git@github.com:MedAI-UAIX/IS-MAN.git
 cd IS-MAN
 
 ### 2. Setup ROS Workspace
+```bash
 mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/src
 ln -s /path/to/IS-MAN .
@@ -58,6 +56,7 @@ catkin_make
 source devel/setup.bash
 
 ### 3. Launch Example Modules
+```bash
 roslaunch franka_ros_interface franka_control.launch
 roslaunch easy_handeye calibrate.launch
 
