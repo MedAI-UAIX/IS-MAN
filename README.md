@@ -1,7 +1,6 @@
 # IS-MAN
 
-**IS-MAN: Intelligent Sonographic-MANipulation**  
-*A First-in-Clinical Large-Scale Study of LLM-Driven Embodied Intelligence for Fully Autonomous Robotic Ultrasound*
+**A First-in-Clinical Large-Scale Study of LLM-Driven Embodied Intelligence for Fully Autonomous Robotic Ultrasound**
 
 ---
 
@@ -86,15 +85,12 @@ This project is part of the **MedAI-UAIX Laboratory** initiative in embodied AI 
 ## 📄 License
 
 This project is released under the **Apache 2.0 License**.  
-The full source code will be **open-sourced after publication**.
 
 ---
 
 ## 👥 Authors & Acknowledgements
 
 **MedAI-UAIX Laboratory**  
-Principal contributors: *Franka-Med et al.*
-
 We gratefully acknowledge all collaborators in robotics, ultrasonography, and clinical AI research.
 
 ---
@@ -104,7 +100,6 @@ We gratefully acknowledge all collaborators in robotics, ultrasonography, and cl
 If you find this work useful, please cite:
 
 ```
-Franka-Med et al.  
 IS-MAN: A First-in-Clinical Large-Scale Study of LLM-Driven Embodied Intelligence for Fully Autonomous Robotic Ultrasound.  
 2025 (under review)
 ```
