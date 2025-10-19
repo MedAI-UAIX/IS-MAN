@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: franka_example_controllers
+Description: Description of franka_example_controllers
+Version: 0.7.1
+Cflags: -I${prefix}/include -I/opt/ros/melodic/include/libfranka
+Libs: -L${prefix}/lib -lfranka_example_controllers /opt/ros/melodic/lib/libfranka.so.0.9.0
+Requires: controller_interface dynamic_reconfigure eigen_conversions franka_hw franka_gripper geometry_msgs hardware_interface tf tf_conversions message_runtime pluginlib realtime_tools roscpp

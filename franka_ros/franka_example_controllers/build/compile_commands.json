@@ -1,0 +1,139 @@
+[
+{
+  "directory": "/home/uax/ws_moveit/src/franka_ros/franka_example_controllers/build",
+  "command": "/usr/bin/c++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"franka_example_controllers\\\" -Idevel/include -I/home/uax/ws_moveit/devel/include -I/home/uax/ws_moveit/src/franka_ros/franka_hw/include -I/home/uax/ws_moveit/src/franka_ros/franka_gripper/include -I/opt/ros/melodic/include -I/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/opt/ros/melodic/share/orocos_kdl/cmake/../../../include -isystem /opt/ros/melodic/include/libfranka -I/usr/include/eigen3 -I/home/uax/tf_ws/src/geometry2/tf2_ros/include -I/home/uax/tf_ws/src/geometry2/tf2/include -I/home/uax/tf_ws/devel/.private/tf2_msgs/include -I/home/uax/tf_ws/src/geometry2/tf2_msgs/include  -O3 -DNDEBUG   -std=gnu++14 -o CMakeFiles/teleop_gripper_node.dir/src/teleop_gripper_node.cpp.o -c /home/uax/ws_moveit/src/franka_ros/franka_example_controllers/src/teleop_gripper_node.cpp",
+  "file": "/home/uax/ws_moveit/src/franka_ros/franka_example_controllers/src/teleop_gripper_node.cpp"
+},
+
+{
+  "directory": "/home/uax/ws_moveit/src/franka_ros/franka_example_controllers/build",
+  "command": "/usr/bin/c++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"franka_example_controllers\\\" -Dfranka_example_controllers_EXPORTS -Idevel/include -isystem /opt/ros/melodic/include/libfranka -isystem /usr/include/eigen3 -isystem /home/uax/ws_moveit/devel/include -isystem /home/uax/ws_moveit/src/franka_ros/franka_hw/include -isystem /home/uax/ws_moveit/src/franka_ros/franka_gripper/include -isystem /opt/ros/melodic/include -isystem /opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -isystem /opt/ros/melodic/share/orocos_kdl/cmake/../../../include -isystem /home/uax/tf_ws/src/geometry2/tf2_ros/include -isystem /home/uax/tf_ws/src/geometry2/tf2/include -isystem /home/uax/tf_ws/devel/.private/tf2_msgs/include -isystem /home/uax/tf_ws/src/geometry2/tf2_msgs/include -I../include  -O3 -DNDEBUG -fPIC   -std=gnu++14 -o CMakeFiles/franka_example_controllers.dir/src/position_force_hybird_controller.cpp.o -c /home/uax/ws_moveit/src/franka_ros/franka_example_controllers/src/position_force_hybird_controller.cpp",
+  "file": "/home/uax/ws_moveit/src/franka_ros/franka_example_controllers/src/position_force_hybird_controller.cpp"
+},
+
+{
+  "directory": "/home/uax/ws_moveit/src/franka_ros/franka_example_controllers/build",
+  "command": "/usr/bin/c++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"franka_example_controllers\\\" -Dfranka_example_controllers_EXPORTS -Idevel/include -isystem /opt/ros/melodic/include/libfranka -isystem /usr/include/eigen3 -isystem /home/uax/ws_moveit/devel/include -isystem /home/uax/ws_moveit/src/franka_ros/franka_hw/include -isystem /home/uax/ws_moveit/src/franka_ros/franka_gripper/include -isystem /opt/ros/melodic/include -isystem /opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -isystem /opt/ros/melodic/share/orocos_kdl/cmake/../../../include -isystem /home/uax/tf_ws/src/geometry2/tf2_ros/include -isystem /home/uax/tf_ws/src/geometry2/tf2/include -isystem /home/uax/tf_ws/devel/.private/tf2_msgs/include -isystem /home/uax/tf_ws/src/geometry2/tf2_msgs/include -I../include  -O3 -DNDEBUG -fPIC   -std=gnu++14 -o CMakeFiles/franka_example_controllers.dir/src/elbow_example_controller.cpp.o -c /home/uax/ws_moveit/src/franka_ros/franka_example_controllers/src/elbow_example_controller.cpp",
+  "file": "/home/uax/ws_moveit/src/franka_ros/franka_example_controllers/src/elbow_example_controller.cpp"
+},
+
+{
+  "directory": "/home/uax/ws_moveit/src/franka_ros/franka_example_controllers/build",
+  "command": "/usr/bin/c++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"franka_example_controllers\\\" -Dfranka_example_controllers_EXPORTS -Idevel/include -isystem /opt/ros/melodic/include/libfranka -isystem /usr/include/eigen3 -isystem /home/uax/ws_moveit/devel/include -isystem /home/uax/ws_moveit/src/franka_ros/franka_hw/include -isystem /home/uax/ws_moveit/src/franka_ros/franka_gripper/include -isystem /opt/ros/melodic/include -isystem /opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -isystem /opt/ros/melodic/share/orocos_kdl/cmake/../../../include -isystem /home/uax/tf_ws/src/geometry2/tf2_ros/include -isystem /home/uax/tf_ws/src/geometry2/tf2/include -isystem /home/uax/tf_ws/devel/.private/tf2_msgs/include -isystem /home/uax/tf_ws/src/geometry2/tf2_msgs/include -I../include  -O3 -DNDEBUG -fPIC   -std=gnu++14 -o CMakeFiles/franka_example_controllers.dir/src/cartesian_pose_example_controller.cpp.o -c /home/uax/ws_moveit/src/franka_ros/franka_example_controllers/src/cartesian_pose_example_controller.cpp",
+  "file": "/home/uax/ws_moveit/src/franka_ros/franka_example_controllers/src/cartesian_pose_example_controller.cpp"
+},
+
+{
+  "directory": "/home/uax/ws_moveit/src/franka_ros/franka_example_controllers/build",
+  "command": "/usr/bin/c++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"franka_example_controllers\\\" -Dfranka_example_controllers_EXPORTS -Idevel/include -isystem /opt/ros/melodic/include/libfranka -isystem /usr/include/eigen3 -isystem /home/uax/ws_moveit/devel/include -isystem /home/uax/ws_moveit/src/franka_ros/franka_hw/include -isystem /home/uax/ws_moveit/src/franka_ros/franka_gripper/include -isystem /opt/ros/melodic/include -isystem /opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -isystem /opt/ros/melodic/share/orocos_kdl/cmake/../../../include -isystem /home/uax/tf_ws/src/geometry2/tf2_ros/include -isystem /home/uax/tf_ws/src/geometry2/tf2/include -isystem /home/uax/tf_ws/devel/.private/tf2_msgs/include -isystem /home/uax/tf_ws/src/geometry2/tf2_msgs/include -I../include  -O3 -DNDEBUG -fPIC   -std=gnu++14 -o CMakeFiles/franka_example_controllers.dir/src/cartesian_pose_controller_topic.cpp.o -c /home/uax/ws_moveit/src/franka_ros/franka_example_controllers/src/cartesian_pose_controller_topic.cpp",
+  "file": "/home/uax/ws_moveit/src/franka_ros/franka_example_controllers/src/cartesian_pose_controller_topic.cpp"
+},
+
+{
+  "directory": "/home/uax/ws_moveit/src/franka_ros/franka_example_controllers/build",
+  "command": "/usr/bin/c++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"franka_example_controllers\\\" -Dfranka_example_controllers_EXPORTS -Idevel/include -isystem /opt/ros/melodic/include/libfranka -isystem /usr/include/eigen3 -isystem /home/uax/ws_moveit/devel/include -isystem /home/uax/ws_moveit/src/franka_ros/franka_hw/include -isystem /home/uax/ws_moveit/src/franka_ros/franka_gripper/include -isystem /opt/ros/melodic/include -isystem /opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -isystem /opt/ros/melodic/share/orocos_kdl/cmake/../../../include -isystem /home/uax/tf_ws/src/geometry2/tf2_ros/include -isystem /home/uax/tf_ws/src/geometry2/tf2/include -isystem /home/uax/tf_ws/devel/.private/tf2_msgs/include -isystem /home/uax/tf_ws/src/geometry2/tf2_msgs/include -I../include  -O3 -DNDEBUG -fPIC   -std=gnu++14 -o CMakeFiles/franka_example_controllers.dir/src/cartesian_velocity_example_controller.cpp.o -c /home/uax/ws_moveit/src/franka_ros/franka_example_controllers/src/cartesian_velocity_example_controller.cpp",
+  "file": "/home/uax/ws_moveit/src/franka_ros/franka_example_controllers/src/cartesian_velocity_example_controller.cpp"
+},
+
+{
+  "directory": "/home/uax/ws_moveit/src/franka_ros/franka_example_controllers/build",
+  "command": "/usr/bin/c++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"franka_example_controllers\\\" -Dfranka_example_controllers_EXPORTS -Idevel/include -isystem /opt/ros/melodic/include/libfranka -isystem /usr/include/eigen3 -isystem /home/uax/ws_moveit/devel/include -isystem /home/uax/ws_moveit/src/franka_ros/franka_hw/include -isystem /home/uax/ws_moveit/src/franka_ros/franka_gripper/include -isystem /opt/ros/melodic/include -isystem /opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -isystem /opt/ros/melodic/share/orocos_kdl/cmake/../../../include -isystem /home/uax/tf_ws/src/geometry2/tf2_ros/include -isystem /home/uax/tf_ws/src/geometry2/tf2/include -isystem /home/uax/tf_ws/devel/.private/tf2_msgs/include -isystem /home/uax/tf_ws/src/geometry2/tf2_msgs/include -I../include  -O3 -DNDEBUG -fPIC   -std=gnu++14 -o CMakeFiles/franka_example_controllers.dir/src/joint_position_example_controller.cpp.o -c /home/uax/ws_moveit/src/franka_ros/franka_example_controllers/src/joint_position_example_controller.cpp",
+  "file": "/home/uax/ws_moveit/src/franka_ros/franka_example_controllers/src/joint_position_example_controller.cpp"
+},
+
+{
+  "directory": "/home/uax/ws_moveit/src/franka_ros/franka_example_controllers/build",
+  "command": "/usr/bin/c++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"franka_example_controllers\\\" -Dfranka_example_controllers_EXPORTS -Idevel/include -isystem /opt/ros/melodic/include/libfranka -isystem /usr/include/eigen3 -isystem /home/uax/ws_moveit/devel/include -isystem /home/uax/ws_moveit/src/franka_ros/franka_hw/include -isystem /home/uax/ws_moveit/src/franka_ros/franka_gripper/include -isystem /opt/ros/melodic/include -isystem /opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -isystem /opt/ros/melodic/share/orocos_kdl/cmake/../../../include -isystem /home/uax/tf_ws/src/geometry2/tf2_ros/include -isystem /home/uax/tf_ws/src/geometry2/tf2/include -isystem /home/uax/tf_ws/devel/.private/tf2_msgs/include -isystem /home/uax/tf_ws/src/geometry2/tf2_msgs/include -I../include  -O3 -DNDEBUG -fPIC   -std=gnu++14 -o CMakeFiles/franka_example_controllers.dir/src/joint_velocity_example_controller.cpp.o -c /home/uax/ws_moveit/src/franka_ros/franka_example_controllers/src/joint_velocity_example_controller.cpp",
+  "file": "/home/uax/ws_moveit/src/franka_ros/franka_example_controllers/src/joint_velocity_example_controller.cpp"
+},
+
+{
+  "directory": "/home/uax/ws_moveit/src/franka_ros/franka_example_controllers/build",
+  "command": "/usr/bin/c++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"franka_example_controllers\\\" -Dfranka_example_controllers_EXPORTS -Idevel/include -isystem /opt/ros/melodic/include/libfranka -isystem /usr/include/eigen3 -isystem /home/uax/ws_moveit/devel/include -isystem /home/uax/ws_moveit/src/franka_ros/franka_hw/include -isystem /home/uax/ws_moveit/src/franka_ros/franka_gripper/include -isystem /opt/ros/melodic/include -isystem /opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -isystem /opt/ros/melodic/share/orocos_kdl/cmake/../../../include -isystem /home/uax/tf_ws/src/geometry2/tf2_ros/include -isystem /home/uax/tf_ws/src/geometry2/tf2/include -isystem /home/uax/tf_ws/devel/.private/tf2_msgs/include -isystem /home/uax/tf_ws/src/geometry2/tf2_msgs/include -I../include  -O3 -DNDEBUG -fPIC   -std=gnu++14 -o CMakeFiles/franka_example_controllers.dir/src/model_example_controller.cpp.o -c /home/uax/ws_moveit/src/franka_ros/franka_example_controllers/src/model_example_controller.cpp",
+  "file": "/home/uax/ws_moveit/src/franka_ros/franka_example_controllers/src/model_example_controller.cpp"
+},
+
+{
+  "directory": "/home/uax/ws_moveit/src/franka_ros/franka_example_controllers/build",
+  "command": "/usr/bin/c++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"franka_example_controllers\\\" -Dfranka_example_controllers_EXPORTS -Idevel/include -isystem /opt/ros/melodic/include/libfranka -isystem /usr/include/eigen3 -isystem /home/uax/ws_moveit/devel/include -isystem /home/uax/ws_moveit/src/franka_ros/franka_hw/include -isystem /home/uax/ws_moveit/src/franka_ros/franka_gripper/include -isystem /opt/ros/melodic/include -isystem /opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -isystem /opt/ros/melodic/share/orocos_kdl/cmake/../../../include -isystem /home/uax/tf_ws/src/geometry2/tf2_ros/include -isystem /home/uax/tf_ws/src/geometry2/tf2/include -isystem /home/uax/tf_ws/devel/.private/tf2_msgs/include -isystem /home/uax/tf_ws/src/geometry2/tf2_msgs/include -I../include  -O3 -DNDEBUG -fPIC   -std=gnu++14 -o CMakeFiles/franka_example_controllers.dir/src/joint_impedance_example_controller.cpp.o -c /home/uax/ws_moveit/src/franka_ros/franka_example_controllers/src/joint_impedance_example_controller.cpp",
+  "file": "/home/uax/ws_moveit/src/franka_ros/franka_example_controllers/src/joint_impedance_example_controller.cpp"
+},
+
+{
+  "directory": "/home/uax/ws_moveit/src/franka_ros/franka_example_controllers/build",
+  "command": "/usr/bin/c++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"franka_example_controllers\\\" -Dfranka_example_controllers_EXPORTS -Idevel/include -isystem /opt/ros/melodic/include/libfranka -isystem /usr/include/eigen3 -isystem /home/uax/ws_moveit/devel/include -isystem /home/uax/ws_moveit/src/franka_ros/franka_hw/include -isystem /home/uax/ws_moveit/src/franka_ros/franka_gripper/include -isystem /opt/ros/melodic/include -isystem /opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -isystem /opt/ros/melodic/share/orocos_kdl/cmake/../../../include -isystem /home/uax/tf_ws/src/geometry2/tf2_ros/include -isystem /home/uax/tf_ws/src/geometry2/tf2/include -isystem /home/uax/tf_ws/devel/.private/tf2_msgs/include -isystem /home/uax/tf_ws/src/geometry2/tf2_msgs/include -I../include  -O3 -DNDEBUG -fPIC   -std=gnu++14 -o CMakeFiles/franka_example_controllers.dir/src/cartesian_impedance_example_controller.cpp.o -c /home/uax/ws_moveit/src/franka_ros/franka_example_controllers/src/cartesian_impedance_example_controller.cpp",
+  "file": "/home/uax/ws_moveit/src/franka_ros/franka_example_controllers/src/cartesian_impedance_example_controller.cpp"
+},
+
+{
+  "directory": "/home/uax/ws_moveit/src/franka_ros/franka_example_controllers/build",
+  "command": "/usr/bin/c++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"franka_example_controllers\\\" -Dfranka_example_controllers_EXPORTS -Idevel/include -isystem /opt/ros/melodic/include/libfranka -isystem /usr/include/eigen3 -isystem /home/uax/ws_moveit/devel/include -isystem /home/uax/ws_moveit/src/franka_ros/franka_hw/include -isystem /home/uax/ws_moveit/src/franka_ros/franka_gripper/include -isystem /opt/ros/melodic/include -isystem /opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -isystem /opt/ros/melodic/share/orocos_kdl/cmake/../../../include -isystem /home/uax/tf_ws/src/geometry2/tf2_ros/include -isystem /home/uax/tf_ws/src/geometry2/tf2/include -isystem /home/uax/tf_ws/devel/.private/tf2_msgs/include -isystem /home/uax/tf_ws/src/geometry2/tf2_msgs/include -I../include  -O3 -DNDEBUG -fPIC   -std=gnu++14 -o CMakeFiles/franka_example_controllers.dir/src/force_example_controller.cpp.o -c /home/uax/ws_moveit/src/franka_ros/franka_example_controllers/src/force_example_controller.cpp",
+  "file": "/home/uax/ws_moveit/src/franka_ros/franka_example_controllers/src/force_example_controller.cpp"
+},
+
+{
+  "directory": "/home/uax/ws_moveit/src/franka_ros/franka_example_controllers/build",
+  "command": "/usr/bin/c++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"franka_example_controllers\\\" -Dfranka_example_controllers_EXPORTS -Idevel/include -isystem /opt/ros/melodic/include/libfranka -isystem /usr/include/eigen3 -isystem /home/uax/ws_moveit/devel/include -isystem /home/uax/ws_moveit/src/franka_ros/franka_hw/include -isystem /home/uax/ws_moveit/src/franka_ros/franka_gripper/include -isystem /opt/ros/melodic/include -isystem /opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -isystem /opt/ros/melodic/share/orocos_kdl/cmake/../../../include -isystem /home/uax/tf_ws/src/geometry2/tf2_ros/include -isystem /home/uax/tf_ws/src/geometry2/tf2/include -isystem /home/uax/tf_ws/devel/.private/tf2_msgs/include -isystem /home/uax/tf_ws/src/geometry2/tf2_msgs/include -I../include  -O3 -DNDEBUG -fPIC   -std=gnu++14 -o CMakeFiles/franka_example_controllers.dir/src/dual_arm_cartesian_impedance_example_controller.cpp.o -c /home/uax/ws_moveit/src/franka_ros/franka_example_controllers/src/dual_arm_cartesian_impedance_example_controller.cpp",
+  "file": "/home/uax/ws_moveit/src/franka_ros/franka_example_controllers/src/dual_arm_cartesian_impedance_example_controller.cpp"
+},
+
+{
+  "directory": "/home/uax/ws_moveit/src/franka_ros/franka_example_controllers/build",
+  "command": "/usr/bin/c++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"franka_example_controllers\\\" -Dfranka_example_controllers_EXPORTS -Idevel/include -isystem /opt/ros/melodic/include/libfranka -isystem /usr/include/eigen3 -isystem /home/uax/ws_moveit/devel/include -isystem /home/uax/ws_moveit/src/franka_ros/franka_hw/include -isystem /home/uax/ws_moveit/src/franka_ros/franka_gripper/include -isystem /opt/ros/melodic/include -isystem /opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -isystem /opt/ros/melodic/share/orocos_kdl/cmake/../../../include -isystem /home/uax/tf_ws/src/geometry2/tf2_ros/include -isystem /home/uax/tf_ws/src/geometry2/tf2/include -isystem /home/uax/tf_ws/devel/.private/tf2_msgs/include -isystem /home/uax/tf_ws/src/geometry2/tf2_msgs/include -I../include  -O3 -DNDEBUG -fPIC   -std=gnu++14 -o CMakeFiles/franka_example_controllers.dir/src/teleop_joint_pd_example_controller.cpp.o -c /home/uax/ws_moveit/src/franka_ros/franka_example_controllers/src/teleop_joint_pd_example_controller.cpp",
+  "file": "/home/uax/ws_moveit/src/franka_ros/franka_example_controllers/src/teleop_joint_pd_example_controller.cpp"
+},
+
+{
+  "directory": "/home/uax/ws_moveit/src/franka_ros/franka_example_controllers/build",
+  "command": "/usr/bin/c++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"franka_example_controllers\\\" -Dfranka_example_controllers_EXPORTS -Idevel/include -isystem /opt/ros/melodic/include/libfranka -isystem /usr/include/eigen3 -isystem /home/uax/ws_moveit/devel/include -isystem /home/uax/ws_moveit/src/franka_ros/franka_hw/include -isystem /home/uax/ws_moveit/src/franka_ros/franka_gripper/include -isystem /opt/ros/melodic/include -isystem /opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -isystem /opt/ros/melodic/share/orocos_kdl/cmake/../../../include -isystem /home/uax/tf_ws/src/geometry2/tf2_ros/include -isystem /home/uax/tf_ws/src/geometry2/tf2/include -isystem /home/uax/tf_ws/devel/.private/tf2_msgs/include -isystem /home/uax/tf_ws/src/geometry2/tf2_msgs/include -I../include  -O3 -DNDEBUG -fPIC   -std=gnu++14 -o CMakeFiles/franka_example_controllers.dir/src/cartesian_pose_ZJK_controller.cpp.o -c /home/uax/ws_moveit/src/franka_ros/franka_example_controllers/src/cartesian_pose_ZJK_controller.cpp",
+  "file": "/home/uax/ws_moveit/src/franka_ros/franka_example_controllers/src/cartesian_pose_ZJK_controller.cpp"
+},
+
+{
+  "directory": "/home/uax/ws_moveit/src/franka_ros/franka_example_controllers/build",
+  "command": "/usr/bin/c++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"franka_example_controllers\\\" -Dfranka_example_controllers_EXPORTS -Idevel/include -isystem /opt/ros/melodic/include/libfranka -isystem /usr/include/eigen3 -isystem /home/uax/ws_moveit/devel/include -isystem /home/uax/ws_moveit/src/franka_ros/franka_hw/include -isystem /home/uax/ws_moveit/src/franka_ros/franka_gripper/include -isystem /opt/ros/melodic/include -isystem /opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -isystem /opt/ros/melodic/share/orocos_kdl/cmake/../../../include -isystem /home/uax/tf_ws/src/geometry2/tf2_ros/include -isystem /home/uax/tf_ws/src/geometry2/tf2/include -isystem /home/uax/tf_ws/devel/.private/tf2_msgs/include -isystem /home/uax/tf_ws/src/geometry2/tf2_msgs/include -I../include  -O3 -DNDEBUG -fPIC   -std=gnu++14 -o CMakeFiles/franka_example_controllers.dir/src/joint_impedance_example_controller_topic.cpp.o -c /home/uax/ws_moveit/src/franka_ros/franka_example_controllers/src/joint_impedance_example_controller_topic.cpp",
+  "file": "/home/uax/ws_moveit/src/franka_ros/franka_example_controllers/src/joint_impedance_example_controller_topic.cpp"
+},
+
+{
+  "directory": "/home/uax/ws_moveit/src/franka_ros/franka_example_controllers/build",
+  "command": "/usr/bin/c++  -DGTEST_CREATE_SHARED_LIBRARY=1 -Dgmock_main_EXPORTS -I/usr/src/googletest/googlemock/include -I/usr/src/googletest/googlemock -I/usr/src/googletest/googletest/include -I/usr/src/googletest/googletest  -O3 -DNDEBUG -fPIC    -Wall -Wshadow -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=gnu++14 -o gtest/googlemock/CMakeFiles/gmock_main.dir/__/googletest/src/gtest-all.cc.o -c /usr/src/googletest/googletest/src/gtest-all.cc",
+  "file": "/usr/src/googletest/googletest/src/gtest-all.cc"
+},
+
+{
+  "directory": "/home/uax/ws_moveit/src/franka_ros/franka_example_controllers/build",
+  "command": "/usr/bin/c++  -DGTEST_CREATE_SHARED_LIBRARY=1 -Dgmock_main_EXPORTS -I/usr/src/googletest/googlemock/include -I/usr/src/googletest/googlemock -I/usr/src/googletest/googletest/include -I/usr/src/googletest/googletest  -O3 -DNDEBUG -fPIC    -Wall -Wshadow -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=gnu++14 -o gtest/googlemock/CMakeFiles/gmock_main.dir/src/gmock-all.cc.o -c /usr/src/googletest/googlemock/src/gmock-all.cc",
+  "file": "/usr/src/googletest/googlemock/src/gmock-all.cc"
+},
+
+{
+  "directory": "/home/uax/ws_moveit/src/franka_ros/franka_example_controllers/build",
+  "command": "/usr/bin/c++  -DGTEST_CREATE_SHARED_LIBRARY=1 -Dgmock_main_EXPORTS -I/usr/src/googletest/googlemock/include -I/usr/src/googletest/googlemock -I/usr/src/googletest/googletest/include -I/usr/src/googletest/googletest  -O3 -DNDEBUG -fPIC    -Wall -Wshadow -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=gnu++14 -o gtest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c /usr/src/googletest/googlemock/src/gmock_main.cc",
+  "file": "/usr/src/googletest/googlemock/src/gmock_main.cc"
+},
+
+{
+  "directory": "/home/uax/ws_moveit/src/franka_ros/franka_example_controllers/build",
+  "command": "/usr/bin/c++  -DGTEST_CREATE_SHARED_LIBRARY=1 -Dgmock_EXPORTS -I/usr/src/googletest/googlemock/include -I/usr/src/googletest/googlemock -I/usr/src/googletest/googletest/include -I/usr/src/googletest/googletest  -O3 -DNDEBUG -fPIC    -Wall -Wshadow -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=gnu++14 -o gtest/googlemock/CMakeFiles/gmock.dir/__/googletest/src/gtest-all.cc.o -c /usr/src/googletest/googletest/src/gtest-all.cc",
+  "file": "/usr/src/googletest/googletest/src/gtest-all.cc"
+},
+
+{
+  "directory": "/home/uax/ws_moveit/src/franka_ros/franka_example_controllers/build",
+  "command": "/usr/bin/c++  -DGTEST_CREATE_SHARED_LIBRARY=1 -Dgmock_EXPORTS -I/usr/src/googletest/googlemock/include -I/usr/src/googletest/googlemock -I/usr/src/googletest/googletest/include -I/usr/src/googletest/googletest  -O3 -DNDEBUG -fPIC    -Wall -Wshadow -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=gnu++14 -o gtest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /usr/src/googletest/googlemock/src/gmock-all.cc",
+  "file": "/usr/src/googletest/googlemock/src/gmock-all.cc"
+},
+
+{
+  "directory": "/home/uax/ws_moveit/src/franka_ros/franka_example_controllers/build",
+  "command": "/usr/bin/c++  -DGTEST_CREATE_SHARED_LIBRARY=1 -Dgtest_main_EXPORTS -I/usr/src/googletest/googletest/include -I/usr/src/googletest/googletest  -O3 -DNDEBUG -fPIC    -Wall -Wshadow -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=gnu++14 -o gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /usr/src/googletest/googletest/src/gtest_main.cc",
+  "file": "/usr/src/googletest/googletest/src/gtest_main.cc"
+},
+
+{
+  "directory": "/home/uax/ws_moveit/src/franka_ros/franka_example_controllers/build",
+  "command": "/usr/bin/c++  -DGTEST_CREATE_SHARED_LIBRARY=1 -Dgtest_EXPORTS -I/usr/src/googletest/googletest/include -I/usr/src/googletest/googletest  -O3 -DNDEBUG -fPIC    -Wall -Wshadow -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=gnu++14 -o gtest/googlemock/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /usr/src/googletest/googletest/src/gtest-all.cc",
+  "file": "/usr/src/googletest/googletest/src/gtest-all.cc"
+}
+]

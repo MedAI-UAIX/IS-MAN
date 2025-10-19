@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<launch>
+<arg name="robot_ip" default="172.16.0.3"/>
+  <arg name="load_gripper" default="false" />
+  <!-- <arg name="robot" default="fr3" doc="choose your robot. Possible values: [panda, fr3]"/>
+  <arg name="arm_id" default="$(arg robot)" /> -->
+  <include file="$(find franka_control)/launch/franka_control.launch" pass_all_args="true"/>
+  <rosparam command="load" file="$(find franka_example_controllers)/config/franka_example_controllers.yaml" />
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="position_force_hybird_controller"/>
+  <node pkg="rviz" type="rviz" output="screen" name="rviz" args="-d $(find franka_example_controllers)/launch/robot.rviz"/>
+  <node name="rqt_reconfigure" pkg="rqt_reconfigure" type="rqt_reconfigure" required="false" />
+
+  <!-- <include file="$(find azure_kinect_ros_driver)/launch/driver.launch" /> -->
+  <node pkg="robotiq_ft_sensor" type="rq_sensor" name="rq_sensor"/>
+  <include file="$(find orbbec_camera)/launch/gemini_330_series.launch" ></include>
+
+
+  <!-- IMU串口和波特率可通过命令行或默认值设置 -->
+  <!-- <arg name="port" default="/dev/ttyUSB1"/>
+  <arg name="baud" default="115200"/>
+  <node pkg="imu" type="imu_pub.py" name="imu_pub" output="screen">
+    <param name="port" value="$(arg port)"/>
+    <param name="baud" value="$(arg baud)"/>
+  </node> -->
+
+  <!-- <node pkg="kw75_sensor" type="kw75_sensor_node" name="kw75_sensor_node" output="screen">
+        <param name="serial_device" value="/dev/ttyUSB1"/>
+  </node> -->
+  
+</launch>
+

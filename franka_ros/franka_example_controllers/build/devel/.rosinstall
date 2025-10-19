@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/uax/ws_moveit/src/franka_ros/franka_example_controllers/build/devel/setup.sh

@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<launch>
+  <arg name="robot_ip" default="172.16.0.3" />
+  <arg name="load_gripper" default="false" />
+  <include file="$(find franka_control)/launch/franka_control.launch" >
+    <arg name="robot_ip" value="$(arg robot_ip)" />
+    <arg name="load_gripper" value="$(arg load_gripper)" />
+  </include>
+
+  <rosparam command="load" file="$(find franka_example_controllers)/config/franka_example_controllers.yaml" />
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen"  args="joint_position_example_topic_controller"/>
+  <node pkg="rviz" type="rviz" output="screen" name="rviz" args="-d $(find franka_example_controllers)/launch/robot.rviz"/>
+
+  <node pkg="robotiq_ft_sensor" type="rq_sensor" name="rq_sensor"/>
+  <include file="$(find orbbec_camera)/launch/gemini_330_series.launch" ></include>
+  <node pkg="tf2_ros" type="static_transform_publisher" name="camrea_broadcaster" args="0.648243 -0.038203 0.494253 0.77505 -0.628854 -0.0524905 -0.0328346 panda_link8 camera_color_optical_frame" />
+  <!-- <include file="$(find azure_kinect_ros_driver)/launch/driver.launch" ></include> -->
+</launch>
