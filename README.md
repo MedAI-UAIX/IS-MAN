@@ -53,7 +53,7 @@ bash scripts/download_models.sh
 
 - 7-DOF robotic arm with force-torque sensor
 - Real-time ultrasound imaging system (DICOM compatible)
-- GPU with >12GB memory (for segmentation and VLM inference)
+- GPU with >12GB memory (for segmentation)
 
 ## Running the System
 
@@ -64,16 +64,6 @@ python sonomind/agent_orchestration.py --mode inference
 python scripts/demo_patient_pipeline.py --input patient_xyz
 ```
 
-## Citation
-
-```bibtex
-@article{YourArticle2025,
-  title={IS-MAN: a First-in-Clinical Large-Scale Study of LLM-Driven Embodied Intelligence for Fully Autonomous Robotic Ultrasound},
-  author={YourName et al.},
-  journal={Nature},
-  year={2025}
-}
-```
 
 ## License & Data Availability
 
@@ -81,13 +71,7 @@ All source code is made available under the **MIT License**. The datasets used i
 
 ### Compliance with Nature’s Open Science Policy
 
-- The source code supporting the findings of this study is openly available at [GitHub URL].
 - The data used for training and testing are included in the repository in a processed, anonymized format.
 - All pretrained models and prompts used in SonoMind are made publicly accessible.
 - Detailed installation and execution instructions are provided to enable full reproducibility.
 
-## Contact
-
-**Corresponding Author**: Dr. [Your Name]  
-Institution: [Your Institution]  
-Email: [your.email@domain.com]
