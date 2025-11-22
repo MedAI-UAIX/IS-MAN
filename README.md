@@ -51,7 +51,7 @@ bash scripts/download_models.sh
 
 3. **Hardware Requirements**
 
-- 6-DOF robotic arm with force-torque sensor
+- 7-DOF robotic arm with force-torque sensor
 - Real-time ultrasound imaging system (DICOM compatible)
 - GPU with >12GB memory (for segmentation and VLM inference)
 
