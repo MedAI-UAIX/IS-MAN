@@ -1,5 +1,7 @@
 # SonoMind — Multi-Agent Autonomous Ultrasound
 
+![Keypoint Overview](demo/../../demo/demo_sonomind.jpg)
+
 ## Repository structure
 
 ```
