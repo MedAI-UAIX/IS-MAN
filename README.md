@@ -192,3 +192,27 @@ franka.switch_controllers(
 All source code is made available under the **Apache-2.0 License**.
 
 ---
+
+## 🔗 Dependencies and Acknowledgements
+
+This project builds upon several open-source projects and pretrained models. We gratefully acknowledge the following repositories and frameworks:
+
+- **libfranka** for low-level robotic control  
+  https://github.com/frankaemika/libfranka
+
+- **DFMS-Net** for benchmarking
+https://github.com/LeapLabTHU/UltraBot
+
+- **VariaNet** for benchmarking
+  https://github.com/Ciel04sk/SCUT_Thyroid_DataSet
+
+- **Qwen3 Models** for LLM-based agents in SonoMind  
+  https://huggingface.co/Qwen
+
+- **LLaMA 3.2 Models** (1B–11B-Vision-Instruct)  
+  https://huggingface.co/meta-llama
+
+- **Gemma & MedGemma Models**  
+  https://huggingface.co/google
+
+All code and models are used under their respective licenses. Please refer to their original repositories for license details.
