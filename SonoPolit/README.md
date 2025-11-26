@@ -1,6 +1,6 @@
 # SonoPilot: Adaptive Force-Position Control Framework for Robotic Ultrasound Scanning
 
-![SonoPilot System Overview](SonoPilot.jpg)
+![SonoPilot System Overview](demo/../../demo/demo_sonopilot.jpg)
 
 **SonoPilot** is a core module of the IS-MAN (Intelligent Sono-Robotic Multi-Agent Nexus) system. It is designed to autonomously control a robotic manipulator for conducting high-precision ultrasound scanning with compliant and adaptive interaction capabilities.
 

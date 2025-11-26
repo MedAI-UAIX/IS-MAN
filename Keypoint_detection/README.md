@@ -1,4 +1,4 @@
 # Keypoint Detection for Thyroid Localization
 
-![Keypoint Overview](demo.jpg)
+![Keypoint Overview](demo/../../demo/demo_keypoint.jpg)
 

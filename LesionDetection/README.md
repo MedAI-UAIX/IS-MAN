@@ -1,4 +1,4 @@
 # Thyroid-nodule detection
 
-![Thyroid-nodule detection](demo.jpg)
+![Thyroid-nodule detection](demo/../../demo/demo_LesionDetection.jpg)
 
