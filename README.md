@@ -1,5 +1,7 @@
 # IS-MAN: LLM-driven Embodied Intelligence System for Autonomous Ultrasound
 
+![IS-MANt System Overview](IS-MAN.jpg)
+
 > This repository contains the source code, and pretrained models for the IS-MAN system, a large-scale LLM-empowered embodied intelligence framework for fully autonomous ultrasound-based thyroid cancer screening in real-world clinical settings.
 
 ## Overview
@@ -15,14 +17,12 @@ IS-MAN was deployed and evaluated in a prospective human study with over 500 par
 
 ```
 IS-MAN/
-├── sonopilot/            # Adaptive force control and visual servoing code
-├── sonomind/             # Multi-agent system powered by LLM
-├── benchmarks/           # Benchmarks: control, segmentation, report generation
-├── dataset/              # Processed ultrasound dataset (de-identified)
-├── scripts/              # Utility scripts (training, evaluation, logging)
-├── configs/              # Configurations for modules and experiments
-├── models/               # Pretrained weights for segmentation and LLM prompts
-└── docs/                 # Method descriptions and supplementary figures
+├── Sonopilot/            # Implementations of hybrid force–position control, impedance control, and Cartesian position control for the robotic manipulator
+├── Sonomind/             # The multi-agent framework coordinating perception, control, and decision modules as used in the autonomous workflow.
+├── SegNet/              # Real-time segmentation: a segmentation pipeline supporting multiple target anatomies (thyroid, carotid artery, liver) with inference scripts and model configurations for clinical deployment.
+├── LesionDetection/              # Thyroid-nodule detection module with training/inference scripts and evaluation utilities
+├── KeypointDetection/            # Keypoint Detection for Thyroid Localization
+└── Franka_ws/                 # 
 ```
 
 ## Installation & Configuration
