@@ -29,7 +29,7 @@ Includes:
 ---
 
 ## 📌 Dependencies
-
+- Ubuntu 20.04
 - ROS Noetic
 - MoveIt
 - Franka ROS Interface
