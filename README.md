@@ -187,15 +187,8 @@ franka.switch_controllers(
 ---
 
 
-## License & Data Availability
+## License
 
-All source code is made available under the **MIT License**. The datasets used in our experiments are **de-identified** and released under a CC BY-NC 4.0 license for non-commercial academic use.
+All source code is made available under the **Apache-2.0 License**.
 
 ---
-
-### Compliance with Nature’s Open Science Policy
-
-- The data used for training and testing are included in the repository in a processed, anonymized format.
-- All pretrained models and prompts used in SonoMind are made publicly accessible.
-- Detailed installation and execution instructions are provided to enable full reproducibility.
-
