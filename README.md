@@ -177,13 +177,13 @@ franka.switch_controllers(
 ---
 
 
-# SonoMind — Multi-Agent Autonomous Ultrasound
+## SonoMind — Multi-Agent Autonomous Ultrasound
 
 ![Keypoint Overview](demo/demo_sonomind.jpg)
 
 - **SonoMind**: The multi-agent framework coordinating perception, control, and decision modules as used in the autonomous workflow.
 
-## Repository structure
+### Repository structure
 
 ```
 sonomind/
@@ -211,7 +211,7 @@ sonomind/
 
 ---
 
-## Quickstart (local simulation)
+### Quickstart (local simulation)
 
 1. Clone the repo and create a virtual environment.
 
@@ -228,8 +228,9 @@ pip install -r requirements.txt
 
     python agents/triage_agent.py
 
+---
 
-## Model Foundation
+### Model Foundation
 
 Our system is built upon the **Qwen3 family of models**, including:
 
