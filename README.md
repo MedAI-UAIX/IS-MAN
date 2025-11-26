@@ -127,7 +127,6 @@ franka.switch_controllers(
 ```
 
 
-
 ---
 
 ### 📖 Controller Parameters Explained
@@ -173,6 +172,16 @@ franka.switch_controllers(
 | `strictness` | `int` | Controller switch strictness. `0`: best-effort, `1`: medium strict, `2`: fully strict. |
 | `start_asap` | `bool` | Whether to start the new controller as soon as possible. |
 | `timeout` | `float` | Timeout (in seconds) to complete the switch. Raises error if timeout exceeded. |
+
+
+---
+
+
+## SonoMind: Multi-Agent System
+
+![Keypoint Overview](demo/demo_sonomind.jpg)
+
+- **SonoMind**: The multi-agent framework coordinating perception, control, and decision modules as used in the autonomous workflow.
 
 
 ---
