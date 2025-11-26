@@ -1,0 +1,4 @@
+model_name_or_path: SonoMind/models/qwen3-8B
+template: qwen3
+infer_backend: huggingface  # choices: [huggingface, vllm, sglang, ktransformers]
+trust_remote_code: true
