@@ -19,9 +19,9 @@ IS-MAN was deployed and evaluated in a prospective human study with over 500 par
 
 ```
 IS-MAN
-├── Sonopilot
-├── Sonomind
-├── SegNet
+├── SonoPilot
+├── SonoMind
+├── Segmentation
 ├── LesionDetection
 ├── KeypointDetection
 └── Franka_ws
@@ -29,7 +29,7 @@ IS-MAN
 
 - **SonoPilot**: Implementations of hybrid force–position control, impedance control, and Cartesian position control for the robotic manipulator.
 - **SonoMind**: The multi-agent framework coordinating perception, control, and decision modules as used in the autonomous workflow.
-- **SonoMind**: Real-time segmentation: a segmentation pipeline supporting multiple target anatomies (thyroid, carotid artery, liver) with inference scripts and model configurations for clinical deployment.
+- **Segmentation**: Real-time segmentation: a segmentation pipeline supporting multiple target anatomies (thyroid, carotid artery, liver) with inference scripts and model configurations for clinical deployment.
 - **LesionDetection**: Thyroid-nodule detection module with inference scripts
 - **KeypointDetection**: Keypoint Detection for Thyroid Localization
 - **Franka_ws**: 
