@@ -1,236 +1,165 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Mar 11 20:33:32 2021
-
-@author: LMD
-
-视频源: 采集卡-topic
-"""
-import sys
-# sys.path.insert(1, '/home/uax/cv_bridge_ws/install/lib/python3/dist-packages')
-# sys.path.insert(2, '/home/uax/cv_bridge_ws/devel/lib/python3/dist-packages')
-sys.path.append('/home/usai/auto_RUSS/R_02_Unet')
-sys.path.append('/home/usai/auto_RUSS/R_02_Unet/Thy_inception_seg')
-import torch.nn as nn
-import torch
-torch.cuda.is_available()
-from torchsummary import summary
-import torch.nn.functional as F
 import os
-import torchvision.transforms.functional as ff
-import torchvision.transforms as transforms
-import numpy as np
-import pandas as pd
-os.environ['NLS_LANG'] = 'SIMPLIFIED CHINESE_CHINA.UTF8'
-# from Thy_inception_seg.model.my_seg import Liver_full_Seg
-from v2_canon_mindray.model.my_seg import Thyriod_Seg
-from SwinUnet.swin_unet import SwinUnet
-from Unet.unet_and_variant import U_Net
-
-
-# 选择设备
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-
-net = U_Net(in_ch=3, out_ch=4)
-net.load_state_dict(torch.load('/home/usai/auto_RUSS/R_02_Unet/Unet/Unet_best_test0.pth',  map_location=device)['state_dict'])
-net.to(device=device)
-net.eval()
-
-##-------基于视频，根据Unet分割的面积，挑选最大切面的帧    
-import glob
-import numpy as np
+import argparse
 import torch
-import os
-import cv2 
-# import SimpleITK as sitk
-import time
-import matplotlib.pyplot as plt
-from scipy.signal import savgol_filter
-import rospy
-from std_msgs.msg import Float64, Float64MultiArray
+import numpy as np
 import cv2
-import imagezmq
-import traceback
-import time
-import simplejpeg
-import copy
-from cv_bridge import CvBridge, CvBridgeError
-from sensor_msgs.msg import Image
-import copy
-import threading
-import time
+from PIL import Image
 import albumentations as A
 from albumentations.pytorch import ToTensorV2
-import threading
+
+from model.UNet_with_ReparamBlock import U_Net
 
 
-frame_count = 1
-time1 = 0
-
-# 建立节点，发布分割面积
-rospy.init_node("unet_node", anonymous=True)
-#建立话题
-area_pub = rospy.Publisher("unet_area", Float64MultiArray, queue_size=4)
-original_img_pub = rospy.Publisher('/Unet/original', Image, queue_size=4) 
-original_add_pred_pub = rospy.Publisher('/Unet/original_add_pred', Image, queue_size=1) 
-pred_img_pub = rospy.Publisher('/Unet/pred', Image, queue_size=4) 
-
-bridge = CvBridge()
-num_img = 0
-
-valid_transform = A.Compose([
-    #A.RandomCrop(320,320,p=1.0),
-    A.Resize(224, 224,p=1),
-    A.Normalize(),
-    ToTensorV2()
-])
-
-def color_map(prediction):
-    # 定义颜色映射表
-    colormap = np.asarray([[0, 0, 0], [255, 0, 0], [0, 255, 0], [0, 0, 255]], dtype=np.uint8)
-    # 将像素值映射到对应RGB色彩值
-    visual_map = np.zeros(shape=(prediction.shape[0],prediction.shape[1],3),dtype=np.uint8)
-    for i in range(4):
-        indices = prediction == i
-        visual_map[indices,:] = colormap[i]
-    return visual_map
+# ---------------------------------------------------
+# Image Preprocessing (Albumentations)
+# ---------------------------------------------------
+def get_val_transforms():
+    """Return preprocessing pipeline used during validation."""
+    return A.Compose([
+        A.Resize(224, 224),
+        A.Normalize(mean=(0.485, 0.456, 0.406),
+                    std=(0.229, 0.224, 0.225)),
+        ToTensorV2()
+    ])
 
 
-image_global = None
-
-def us_array_callback(data):
-        global image_global
-        image_global = bridge.imgmsg_to_cv2(data, "bgr8")
-
-rospy.Subscriber('/Unet/capture_us', Image, us_array_callback)
-
-# 定义一个线程执行的函数
-def thread_function(name):
-    rospy.spin()
-
-# 创建线程对象
-thread = threading.Thread(target=thread_function, args=("Thread1", ))
-
-# 启动线程
-thread.start()
+# ---------------------------------------------------
+# Load Trained Model
+# ---------------------------------------------------
+def load_model(checkpoint_path, device="cuda"):
+    """Load trained UNet model from checkpoint."""
+    model = U_Net(out_ch=5)
+    checkpoint = torch.load(checkpoint_path, map_location="cpu")
+    model.load_state_dict(checkpoint["state_dict"])
+    model = model.to(device)
+    model.eval()
+    return model
 
 
-while True:
-    if image_global is not None:
-        try:
-            num_img = num_img + 1
-            time1 = time.time() #if frame_count == 1 else time1
+# ---------------------------------------------------
+# Image Preprocessing
+# ---------------------------------------------------
+def preprocess_image(img_path, transforms):
+    """Load and preprocess image using Albumentations."""
+    img = Image.open(img_path).convert("RGB")
+    img = np.array(img)
 
-            # ===== ros话题接收
-            
-            frame = copy.deepcopy(image_global)
-            #将图像发布出去
-            original_img_pub.publish(bridge.cv2_to_imgmsg(frame, "bgr8"))
-
-            #frame = frame[:1450,360:1830,:]
-            frame.shape
-            w,h,c = frame.shape
-            # print( (int(w),int(h)))
-
-            frame_tensor = valid_transform(image=frame)['image'].unsqueeze(0)
-
-            frame_tensor = frame_tensor.to(device=device, dtype=torch.float32)
-            frame_tensor.shape
-            # 预测
-            pred = net(frame_tensor)
-            pred = torch.softmax(pred, dim=1)
-            pred = torch.argmax(pred, dim=1).cpu().numpy()
-            pred = pred.squeeze().astype('uint8')
-            pred = copy.deepcopy(cv2.resize(pred, (h,w), interpolation=cv2.INTER_NEAREST))
-
-            #0背景，1甲状腺，2气管，3颈动脉
-            pred_gray = copy.deepcopy(pred)
-            pred_gray[np.where(pred_gray != 1)] = 0
-            pred_gray[pred==1] = 255
-
-            image_array = color_map(pred)  
-            image_array.shape
-            
-            #寻找角点与轮廓
-            cont = copy.deepcopy(pred)
-            cont[np.where(cont!=1)] =0
-            # print(np.where(cont==2))
-            cnts, hierarchy = cv2.findContours(cont.astype('uint8'), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE) 
-            # len(cnts)
-            area = {}  #用来记录每个目标的像素面积
-            for index, c in enumerate(cnts):
-                area[index] = cv2.contourArea(c) 
-                
-            sorted_result = sorted(area.items(), key=lambda x: x[1],reverse=True) ## 
-            cont_2 = copy.deepcopy(pred)
-            cont_2[np.where(cont_2 != 2)] = 0
-            cnts_2, hierarchy_2 = cv2.findContours(cont_2.astype('uint8'), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-            area_2 = {}  # 用来记录每个目标的像素面积
-            for index, c_2 in enumerate(cnts_2):
-                # len(cnts)
-                # print(cv2.contourArea(c))
-                area_2[index] = cv2.contourArea(c_2)  
-
-            sorted_result_2 = sorted(area_2.items(), key=lambda x: x[1], reverse=True) 
-
-            if sorted_result :
-                max_area_index = sorted_result[0][0]
-                max_area = sorted_result[0][1]
-                (x, y, w, h) = cv2.boundingRect(cnts[max_area_index]) 
-                center_x = x + w // 2
-                if sorted_result_2:
-                    max_area_index = sorted_result[0][0]
-                    max_area = sorted_result[0][1]
-                    # 为了便于可视化，将最大的区域绘制出来
-                    (x, y, w, h) = cv2.boundingRect(cnts[max_area_index]) 
-                    max_area_index_2 = sorted_result_2[0][0]
-                    max_area_2 = sorted_result_2[0][1]
-                    # 为了便于可视化，将最大的区域绘制出来
-                    (x2, y2, w2, h2) = cv2.boundingRect(cnts_2[max_area_index_2]) 
-                else:
-                    x=0
-                    w=0
-                    x2=0
-                    y2=0
-                    w2=0
-                    h2=0
-                    max_area=0
-            else:
-                x=0
-                w=0
-                x2=0
-                y2=0
-                w2=0
-                h2=0
-                max_area=0
-
-            #将面积发布出去
-            send_area = Float64MultiArray()
-
-            send_area.data = [x, w, x2, w2, 35, 820,max_area]  
-            area_pub.publish(send_area)
-
-            #将分割图像发布出去
-            pred_gray = cv2.cvtColor(pred_gray, cv2.COLOR_GRAY2BGR)
-            pred_img_pub.publish(bridge.cv2_to_imgmsg(pred_gray, "bgr8"))  
-           
-
-            image = cv2.addWeighted(frame,0.7, image_array, 0.3, 0).astype('uint8')
-            original_add_pred_pub.publish(bridge.cv2_to_imgmsg(image, "bgr8"))
-
-            time2 = time.time()
-            print(device, int(1/(time2-time1)))
-            time.sleep(0.01)
-            # frame_count += 1
-
-            
-            if  cv2.waitKey(1) == ord('q'):
-                cv2.destroyAllWindows()    
-                # image_hub.close()
-                break
-        except:
-            print(traceback.format_exc())
-            print('==1===')
-            # break
+    img = transforms(image=img)["image"]  # Tensor (3,H,W)
+    img = img.unsqueeze(0)                # → (1,3,H,W)
+    return img.float()
 
 
+# ---------------------------------------------------
+# Logits → Class Map
+# ---------------------------------------------------
+def logits_to_class_map(logits: torch.Tensor):
+    """Convert model logits into class map."""
+    return torch.argmax(logits, dim=1)
+
+
+# ---------------------------------------------------
+# OpenCV Overlay
+# ---------------------------------------------------
+def save_overlay_multiclass(img_tensor, pred, save_path, alpha=0.5):
+    """
+    Multi-class segmentation overlay using OpenCV.
+
+    img_tensor: (3,H,W) torch tensor
+    pred:       (H,W) numpy array, class map
+    alpha:      transparency
+    """
+
+    # Convert tensor → uint8 image
+    img = img_tensor.permute(1, 2, 0).cpu().numpy()
+    img = ((img - img.min()) / (img.max() - img.min() + 1e-8) * 255).astype(np.uint8)
+    img_bgr = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
+
+    # Define BGR colors for each class
+    class_colors = {
+        1: (255, 0, 0),     # Thyroid (blue)
+        2: (0, 255, 255),   # Trachea (yellow)
+        3: (0, 0, 255),     # Carotid artery (red)
+        4: (0, 255, 0),     # Liver (green)
+    }
+
+    # Initialize color mask
+    mask_color = np.zeros_like(img_bgr)
+
+    # Paint each class
+    for cls_id, color in class_colors.items():
+        mask = (pred == cls_id)
+        mask_color[mask] = color
+
+    # Overlay
+    overlay = cv2.addWeighted(mask_color, alpha, img_bgr, 1 - alpha, 0)
+
+    cv2.imwrite(save_path, overlay)
+    print(f"[Saved Multi-Class Overlay] {save_path}")
+
+
+
+# ---------------------------------------------------
+# Inference for Single Image
+# ---------------------------------------------------
+def inference_single_image(model, img_path, save_path, device="cuda"):
+    transforms = get_val_transforms()
+    xb = preprocess_image(img_path, transforms).to(device)
+
+    with torch.no_grad():
+        logits = model(xb)
+        pred = logits_to_class_map(logits).cpu().numpy()[0]
+
+
+    save_overlay_multiclass(
+        xb.cpu()[0],
+        pred,
+        save_path,
+        alpha=0.3
+    )
+
+
+# ---------------------------------------------------
+# Argument Parser
+# ---------------------------------------------------
+def parse_args():
+    parser = argparse.ArgumentParser(description="UNet Inference Script")
+
+    parser.add_argument("--img_path", type=str,
+                        default="demo/image/2019053019280148_0_2.png",
+                        help="Path to input image.")
+
+    parser.add_argument("--checkpoint", type=str,
+                        default="checkpoint/best.pth",
+                        help="Path to model checkpoint.")
+
+    parser.add_argument("--save_path", type=str,
+                        default="output/pred_overlay.png",
+                        help="Path to save overlay image.")
+
+    parser.add_argument("--device", type=str, default="cuda",
+                        help="Device: cuda or cpu.")
+
+    return parser.parse_args()
+
+
+# ---------------------------------------------------
+# Main
+# ---------------------------------------------------
+def main():
+    args = parse_args()
+
+    print("======= Inference Configuration =======")
+    print(f"Input Image:   {args.img_path}")
+    print(f"Checkpoint:    {args.checkpoint}")
+    print(f"Save Path:     {args.save_path}")
+    print(f"Device:        {args.device}")
+    print("=======================================")
+
+    model = load_model(args.checkpoint, args.device)
+    inference_single_image(model, args.img_path, args.save_path, args.device)
+
+
+if __name__ == "__main__":
+    main()
+
+# python inference.py --img_path demo/image/test2.png --checkpoint checkpoint/ours_best_test0__.pth --save_path output/result2.png --device cuda
