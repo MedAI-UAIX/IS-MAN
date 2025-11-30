@@ -94,13 +94,14 @@ python inference.py     --img_path Segmentation/demo/image/thyroid.png     --che
 
 # 🏥 Multi-Class Colors
 
-  Label   Organ            Color (B,G,R)
-  ------- ---------------- ---------------
-  0       Background       (transparent)
-  1       Thyroid          (255, 0, 0)
-  2       Carotid artery   (0, 0, 255)
-  3       Trachea          (0, 255, 255)
-  4       Liver            (0, 255, 0)
+| Label | Organ          | Color (B,G,R)  |
+|-------|----------------|----------------|
+| 0     | Background     | Transparent    |
+| 1     | Thyroid        | (255, 0, 0)    |
+| 2     | Carotid artery | (0, 0, 255)    |
+| 3     | Trachea        | (0, 255, 255)  |
+| 4     | Liver          | (0, 255, 0)    |
+
 
 ------------------------------------------------------------------------
 
