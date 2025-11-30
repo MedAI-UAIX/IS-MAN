@@ -46,7 +46,12 @@ conda activate franka
 pip install -r requirements.txt
 ```
 
+---
+---
+
+
 ## SonoPilot: Adaptive Force-Position Control Framework for Robotic Ultrasound Scanning
+
 
 ![SonoPilot System Overview](demo/demo_sonopilot.jpg)
 
