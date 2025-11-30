@@ -33,19 +33,20 @@ sonomind/
 ## Quickstart (local simulation)
 
 1. Clone the repo and create a virtual environment.
-
+``` bash
 pip install -r requirements.txt
-
+```
 
 2. Start the tool API server
 
 3. Start the agents
-
-    python SonoMind/models/run_agents.py
-
+``` bash
+python SonoMind/models/run_agents.py
+```
 4. Run a simple inference (example):
-
-    python agents/triage_agent.py
+``` bash
+python agents/triage_agent.py
+```
 
 
 ## Model Foundation
