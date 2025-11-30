@@ -83,11 +83,12 @@ python inference.py     --img_path Segmentation/demo/image/thyroid.png     --che
 
 ## **Input Image**
 
-    Segmentation/demo/image/thyroid.png
+![Input](/demo/demo_seg_input.jpg)
+
 
 ## **Output Image**
 
-    Segmentation/output/thyroid.png
+![Output](/demo/demo_seg_output.jpg)
 
 ------------------------------------------------------------------------
 
@@ -104,5 +105,10 @@ python inference.py     --img_path Segmentation/demo/image/thyroid.png     --che
 ------------------------------------------------------------------------
 
 # 📬 Contact
-
 Feel free to open an Issue if you have any questions.
+
+---
+
+## 📚 Citation
+
+If you use this work, please cite our IS-MAN project paper on robotic thyroid ultrasound screening.
