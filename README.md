@@ -29,10 +29,10 @@ IS-MAN
 
 - **SonoPilot**: Implementations of hybrid force–position control, impedance control, and Cartesian position control for the robotic manipulator.
 - **SonoMind**: The multi-agent framework coordinating perception, control, and decision modules as used in the autonomous workflow.
-- **Segmentation**: Real-time segmentation: a segmentation pipeline supporting multiple target anatomies (thyroid, carotid artery, liver) with inference scripts and model configurations for clinical deployment.
+- **Segmentation**: Real-time segmentation: a segmentation pipeline supporting multiple target anatomies (thyroid, carotid artery, liver, trachea) with inference scripts and model configurations for clinical deployment.
 - **LesionDetection**: Thyroid-nodule detection module with inference scripts
 - **KeypointDetection**: Keypoint Detection for Thyroid Localization
-- **Franka_ws**: 
+- **Franka_ws**:   The ROS workspace designed for developing and running control applications for the Franka Emika Panda robot. It integrates the Franka ROS packages and provides a clean environment for real-time robot control, motion execution, and controller development.
 
 ---
 

@@ -6,17 +6,14 @@
 
 # UNet with Reparameterizable Convolution for Multi-Organ Segmentation
 
-This repository provides an inference implementation of a **UNet model
-with Reparameterizable Convolution blocks**, designed for multi-organ
-segmentation in ultrasound images (thyroid, carotid artery, trachea,
-liver).
+This repository provides an inference implementation of a **UNet model with Reparameterizable Convolution blocks**, designed for multi-organ segmentation in ultrasound images (thyroid, carotid artery, trachea,liver).
 
-The model supports both **CUDA (GPU)** and **CPU** inference.\
-Ours pretrained weights are provided on HuggingFace.
+The model supports both **CUDA (GPU)** and **CPU** inference. 
 
 ------------------------------------------------------------------------
 
 ## 📌 Pretrained Weights
+**Ours pretrained weights are provided on HuggingFace.**
 
 👉 **HuggingFace Model Hub**\
 https://huggingface.co/medaiming/UnetReparamConv
