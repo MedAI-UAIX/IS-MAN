@@ -32,25 +32,22 @@ import datetime
 
 
 
-class KeypointDetectionThread(QThread):   #线程类
-    """关键点检测模型的线程类"""
+class KeypointDetectionThread(QThread): 
     keypoint_img_signal = pyqtSignal(list) 
 
     def __init__(self, goal_force=2, save_path='', test_mode='1'):
         super(KeypointDetectionThread, self).__init__()
 
-        # === keypoint detection
-        # self.model_yolov8 = YOLO("/home/usai/auto_RUSS/R_03_keypoint/yolov8/train4/weights/best.pt")  # load an official model
-        self.model_yolov8 = YOLO("/home/usai/auto_RUSS/R_03_keypoint/yolo11/yolo11m_pose_best_thy_ketpoint.pt")  # load an official model
+        self.model_yolov8 = YOLO("/home/usai/auto_RUSS/R_03_keypoint/yolo11/yolo11m_pose_best_thy_ketpoint.pt") 
         # Predict with the model
-        rgb_img_original = cv2.imread("person.png")  #第一次推理需要加载，耗时
-        results = self.model_yolov8(rgb_img_original)  # predict on an image
+        rgb_img_original = cv2.imread("person.png")  
+        results = self.model_yolov8(rgb_img_original) 
 
-        self.test_mode = test_mode  # 推理的方式，有1/2/3种
-        self.select_point = []  # 存储关键点
+        self.test_mode = test_mode  
+        self.select_point = []  
 
         self.bridge = CvBridge()
-        self.init_publisher()  #初始化发布节点
+        self.init_publisher() 
 
         self.rgb_cv_img = None 
         self.depth_cv_img = None
@@ -58,15 +55,13 @@ class KeypointDetectionThread(QThread):   #线程类
         self.publish_flag = False
         self.need_caculate_normal = True
 
-        #======= 相机在机器人基底坐标系下的变换 ============
-        #------ 相机内参（ros驱动之后可以看到）
+
         camera_matrix = np.loadtxt("/home/usai/auto_RUSS/R_UI/keypoint_detection/cameraMatrix.txt", delimiter=",")
         self.fx = camera_matrix[0][0]
         self.fy = camera_matrix[1][1]
         self.cx = camera_matrix[0][2]
         self.cy = camera_matrix[1][2]
 
-        #手眼标定获得，相机坐标系，相对于基底坐标系的变换矩阵T
         R_wrist2cam = np.load('/home/usai/auto_RUSS/R_UI/keypoint_detection/R_wrist2cam.npz.npy').astype(np.float32)
         t_wrist2cam = np.load('/home/usai/auto_RUSS/R_UI/keypoint_detection/t_wrist2cam.npz.npy').T.astype(np.float32)
         self.T_wrist2cam = np.eye(4).astype(np.float32)
@@ -78,7 +73,6 @@ class KeypointDetectionThread(QThread):   #线程类
             self.rate.sleep()
             while self.publish_flag:
                 if len(self.select_point) != 6:
-                    print('关键点个数为: {}, 请检查'.format(len(self.select_point)))
                     self.publish_flag = False
                     self.need_caculate_normal = True
                 else:
@@ -89,50 +83,43 @@ class KeypointDetectionThread(QThread):   #线程类
                         self.mid_Trans, mid_cam2object = self.keypoint_normal(mid_up[0], mid_up[1], mid_down[0], mid_down[1])
                         self.need_caculate_normal = False
 
-                    self.axis_publisher()    # 发布
+                    self.axis_publisher()   
 
     def pre_view(self):
-        """预览检测结果"""
         if self.rgb_cv_img is not None:
             frame = copy.deepcopy(self.rgb_cv_img)
             frame, self.select_point = get_thy_keypoint(model=self.model_yolov8, rgb_img_original=frame, way=self.test_mode)
             self.need_caculate_normal = True
             
             image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-            frame = QImage(image.data, # 数据源
-                            image.shape[1],  # 宽度
-                            image.shape[0],	# 高度
-                            image.shape[1] * 3, # 行字节数
+            frame = QImage(image.data, 
+                            image.shape[1],  
+                            image.shape[0],	
+                            image.shape[1] * 3, 
                             QImage.Format_RGB888)
             image = QPixmap.fromImage(frame)
             image = image.scaled(QSize(328,243), 
-                                aspectRatioMode=Qt.KeepAspectRatio,   #保持纵横比不变
+                                aspectRatioMode=Qt.KeepAspectRatio,  
                                 transformMode=Qt.SmoothTransformation)
             self.keypoint_img_signal.emit(list([image]))
 
-            #重置None，防止中间被意外调用
-            # self.rgb_cv_img = None
         else:
-            print('未获取可用于关键点检测的RGB图片, 请检查信号来源')
+            print('none')
 
 
     def publish_keypoint(self):
-        """ 发布 """
         self.publish_flag = True
         self.need_caculate_normal = True
 
     def chaneg_test_mode(self, mode:str):
-        """ 切换测试的方法 """
         self.test_mode = mode
 
     def clear_keypoint(self):
-        """ 清除已经存储的关键点 """
         self.select_point = []
         self.publish_flag = False
         self.need_caculate_normal = True
 
     def init_publisher(self):
-        """ 初始化话题发布器 """
         self.left_thyroid_pub = rospy.Publisher('/left_thyroid', Float64MultiArray, queue_size=10)
         self.right_thyroid_pub = rospy.Publisher('/right_thyroid', Float64MultiArray, queue_size=10)
         self.mid_thyroid_pub = rospy.Publisher('/mid_thyroid', Float64MultiArray, queue_size=10)
@@ -141,7 +128,6 @@ class KeypointDetectionThread(QThread):   #线程类
         self.rate = rospy.Rate(10)
 
     def save_data(self, save_path='/home/usai/Data'):
-        """保存 rgb+depth+机器人姿态的数据"""
         strftime = datetime.datetime.now().strftime('%Y-%m-%d %H-%M-%S')
         rgb_img = copy.deepcopy(self.rgb_cv_img)
         depth_img = copy.deepcopy(self.depth_cv_img)
@@ -153,7 +139,6 @@ class KeypointDetectionThread(QThread):   #线程类
         np.save(os.path.join(save_path, strftime, 'franka.npy'), T_base2wrist)
 
     def axis_publisher(self):
-            """ 发布数据 """
             left_msg = Float64MultiArray()
             right_msg = Float64MultiArray()
             mid_msg = Float64MultiArray()
@@ -179,7 +164,6 @@ class KeypointDetectionThread(QThread):   #线程类
             self.rate.sleep()
 
     def vector_normal(self, vector):
-        """向量归一化"""
         x, y, z = vector
         w = pow((pow(x, 2) + pow(y, 2) + pow(z, 2)), 0.5)
         normal = np.array([x/w, y/w, z/w])
@@ -234,25 +218,19 @@ class KeypointDetectionThread(QThread):   #线程类
         z0 = np.float64([0, 0, 1]).reshape((3, 1))
         cos_theta = z0.T.dot(center_normal_vector)
         theta = np.arccos(cos_theta)
-        print(f"cos_theta: {cos_theta} theta={np.degrees(theta)}")
         rot_vect = np.cross(z0.reshape(-1), center_normal_vector.reshape(-1))
         rot_vect /= np.linalg.norm(rot_vect) # 归一化
-        print(f"旋转向量: {rot_vect}")
         rot_mat = cv2.Rodrigues(rot_vect*theta)[0]
-        print(f"旋转矩阵:\n  {rot_mat}")
      
         z_normal = self.vector_normal(center_normal_vector.squeeze())
         direction_point =  point_cloud.points[index_direction]
         vector_direction = direction_point - center_point
-        print('z_normal',z_normal)
-        print('vector_direction',vector_direction)
         y_temp = np.cross(z_normal ,  vector_direction)
         x_temp = np.cross(y_temp, z_normal)
 
         x_normal = self.vector_normal(x_temp)
         y_normal = self.vector_normal(y_temp)
         
-        print('z_normal', z_normal)
         Trans = np.array([[x_normal[0], y_normal[0], z_normal[0], center_point[0]],
                                             [x_normal[1], y_normal[1], z_normal[1], center_point[1]],
                                             [x_normal[2], y_normal[2], z_normal[2], center_point[2]],
@@ -266,7 +244,6 @@ class KeypointDetectionThread(QThread):   #线程类
                                     [0, 0, 0, 1]])
         Trans = np.dot(Trans, Rx)
         
-        print('Trans', Trans)
      
         P = np.dot(self.T_wrist2cam, Trans)
         P = np.dot(self.T_base2wrist, P)
