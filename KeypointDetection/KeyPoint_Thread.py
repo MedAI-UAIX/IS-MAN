@@ -1,33 +1,21 @@
 import sys
-# 将keypoint文件夹加入环境变量，否则会找不到包
-sys.path.append('/home/uax/LiMD_example/Robot_arm/R_03_keypoint/NeckNet')
 from R_03_keypoint.yolov8.predict_6_point import get_thy_keypoint
 from ultralytics import YOLO
-
 from cv_bridge import CvBridge
 import os
-
 import rospy
 import copy
 import open3d as o3d
 import cv2
 import numpy as np
-
-
 from glob import glob
 from std_msgs.msg import Float64, Float64MultiArray
-import traceback
-# from yolo import YOLO
-# from hrnet import Hrnet
 from PIL import Image as PILImage
 from PyQt5.QtCore import Qt, QThread, pyqtSignal, QSize
 from PyQt5.QtGui import QImage, QPixmap, QTransform, QMovie
 import copy
 import scipy.linalg as la
 from math import pi
-import logging
-# 设置日志级别为 WARNING 或更高，这样就不会显示 INFO 级别的速度提示
-# logging.getLogger('ultralytics').setLevel(logging.WARNING)
 import datetime
 
 
