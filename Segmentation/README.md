@@ -12,7 +12,7 @@ segmentation in ultrasound images (thyroid, carotid artery, trachea,
 liver).
 
 The model supports both **CUDA (GPU)** and **CPU** inference.\
-Official pretrained weights are provided on HuggingFace.
+Ours pretrained weights are provided on HuggingFace.
 
 ------------------------------------------------------------------------
 
