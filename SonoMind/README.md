@@ -1,31 +1,53 @@
 # SonoMind — Multi-Agent Autonomous Ultrasound
 
-![Keypoint Overview](demo/../../demo/demo_sonomind.jpg)
-
 ## Repository structure
 
 ```
 sonomind/
-├── README.md                 # This file (overview + quickstart)
-├── requirements.txt          # minimal Python deps
-├── prompts/
-│   ├── triage_prompt.py
-│   ├── sonographer_prompt.py
-│   ├── radiologist_prompt.py
-│   └── physician_prompt.py
-├── tools/                  
-├── agents/
-│   ├── triage_agent.py
-│   ├── sonographer_agent.py
-│   ├── radiologist_agent.py
-│   └── physician_agent.py
-├── models/
-│   ├── prompts.py
-│   └── inference.py          # model wrapper/adapter
-├── fine_tune/
-│   ├── lora_train.py
-│   └── data/           
-└── ...
+│  main_UI.py
+│  README.md
+│  requirements.txt
+│
+├─agents
+│  │  physician.py
+│  │  radiologist.py
+│  │  sonographer.py
+│  └─triage.py
+│
+├─fine_tune
+│  │  lora_train.py
+│  └─data
+│
+├─models
+│  │  physician_agent.yaml
+│  │  radiologist_agent.yaml
+│  │  run_agents.py
+│  │  sonographer_agent.yaml
+│  │  triage_agent.yaml
+│  │
+│  ├─physician_adapter
+│  ├─qwen3-4B
+│  ├─qwen3-8B
+│  ├─qwen3-8B-vl
+│  ├─radiologist_adapter
+│  └─sonographer_adapter
+│
+├─prompts
+│  │  physician_prompt.py
+│  │  radiologist_prompt.py
+│  │  sonographer_prompt.py
+│  └─ triage_prompt.py
+│
+└─tools
+    │  radiologist_tools.py
+    │  sonographer_tools.py
+    │  __init__.py
+    │
+    ├─database
+    ├─pubmedbert-base
+    ├─thynet
+    ├─thynets
+    └─thyroid_TIRADS
 ```
 
 ---
@@ -33,20 +55,19 @@ sonomind/
 ## Quickstart (local simulation)
 
 1. Clone the repo and create a virtual environment.
-``` bash
+
 pip install -r requirements.txt
-```
+
 
 2. Start the tool API server
 
 3. Start the agents
-``` bash
-python SonoMind/models/run_agents.py
-```
+
+    python SonoMind/models/run_agents.py
+
 4. Run a simple inference (example):
-``` bash
-python agents/triage_agent.py
-```
+
+    python main_UI.py
 
 
 ## Model Foundation

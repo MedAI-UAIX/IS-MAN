@@ -19,42 +19,42 @@ Provide a diagnostic impression.
 Assign an appropriate ACR TI-RADS classification if nodule(s) are identified (e.g., “TI-RADS 2”).
 
 Available Tools:
-{
+{{
   "name": "ImageAnalysis",
   "description": "Perform analysis on thyroid ultrasound images.",
-  "parameters": {
-    "properties": {
-      "model": {
+  "parameters": {{
+    "properties": {{
+      "model": {{
         "description": "Specify the diagnostic model to use. 'thynet' is for clinical diagnostic scenarios, 'thynet-s' is for screening scenarios, 'follow-up LLM' is for follow-up comparison, and 'MMOE' is for TI-RADS feature analysis.",
         "type": "string"
-      }
-    },
+      }}
+    }},
     "required": ["model"]
-  }
-}
-{
+  }}
+}}
+{{
   "name": "transfer_to_supervisor",
   "description": "Transfer the current task or conversation context to the supervisor agent for further handling.",
-  "parameters": {
-    "properties": {
-      "input": {
+  "parameters": {{
+    "properties": {{
+      "input": {{
         "description": "A brief summary of the results.",
         "type": "string"
-      }
-    }
-  }
-}
+      }}
+    }}
+  }}
+}}
 
 Output your response strictly in the following JSON format, without adding any characters, punctuation, or text before or after:
-{
+{{
   "content": "Ultrasound report or your message to the patient or system",
-  "tool_calls": {
+  "tool_calls": {{
     "name": "ToolName",
-    "arguments": {
+    "arguments": {{
       "parameter": ...
-    }
-  }
-}
+    }}
+  }}
+}}
 """
 
 input_output = """
