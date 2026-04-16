@@ -63,7 +63,6 @@ catkin_package(
 )
 
 add_library(franka_example_controllers
-src/position_force_hybird_controller.cpp
   src/elbow_example_controller.cpp
   src/cartesian_pose_example_controller.cpp
   src/cartesian_pose_controller_topic.cpp
@@ -77,12 +76,12 @@ src/position_force_hybird_controller.cpp
   src/force_example_controller.cpp
   src/dual_arm_cartesian_impedance_example_controller.cpp
   src/teleop_joint_pd_example_controller.cpp
-  src/position_force_hybird_controller.cpp
-  src/cartesian_pose_ZJK_controller.cpp
+  # src/position_force_hybird_controller.cpp
+  # src/cartesian_pose_ZJK_controller.cpp
   # src/cartesian_position_force_hybird_controller.cpp
   src/joint_impedance_example_controller_topic.cpp
 
-  src/cartesian_velocity_Z_impedance_LiMD.cpp
+  # src/cartesian_velocity_Z_impedance_LiMD.cpp
 )
 
 add_dependencies(franka_example_controllers
