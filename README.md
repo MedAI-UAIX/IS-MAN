@@ -394,7 +394,7 @@ It is optimized for the characteristics of **B-mode ultrasound**, including nois
 Ours YOLO weights can be downloaded from:
 
 👉 **HuggingFace Model Hub**  
-https://huggingface.co/medaiming/ThyroidLesionDetection/tree/main
+https://huggingface.co/CJH104/ThyroidLesionDetection/tree/main
 
 Download:
 
