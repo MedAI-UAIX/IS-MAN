@@ -293,7 +293,7 @@ The inference script is located at:
 #### **Basic Command**
 
 ``` bash
-python inference.py     --img_path Segmentation/demo/image/thyroid.png     --checkpoint Segmentation/checkpoint/best.pth     --save_path Segmentation/output/thyroid.png     --device cuda
+python Segmentation/inference.py     --img_path Segmentation/demo/image/thyroid.png     --checkpoint Segmentation/checkpoint/best.pth     --save_path Segmentation/output/thyroid.png     --device cuda
 ```
 
 ------------------------------------------------------------------------
@@ -301,7 +301,7 @@ python inference.py     --img_path Segmentation/demo/image/thyroid.png     --che
 ##### ⚡ CUDA Inference
 
 ``` bash
-python inference.py     --img_path Segmentation/demo/image/thyroid.png     --checkpoint Segmentation/checkpoint/best.pth     --save_path Segmentation/output/thyroid.png     --device cuda
+python Segmentation/inference.py     --img_path Segmentation/demo/image/thyroid.png     --checkpoint Segmentation/checkpoint/best.pth     --save_path Segmentation/output/thyroid.png     --device cuda
 ```
 
 ------------------------------------------------------------------------
@@ -309,7 +309,7 @@ python inference.py     --img_path Segmentation/demo/image/thyroid.png     --che
 ##### 🖥️ CPU Inference
 
 ``` bash
-python inference.py     --img_path Segmentation/demo/image/thyroid.png     --checkpoint Segmentation/checkpoint/best.pth     --save_path Segmentation/output/thyroid.png     --device cpu
+python Segmentation/inference.py     --img_path Segmentation/demo/image/thyroid.png     --checkpoint Segmentation/checkpoint/best.pth     --save_path Segmentation/output/thyroid.png     --device cpu
 ```
 
 ------------------------------------------------------------------------
@@ -415,7 +415,7 @@ LesionDetection/checkpoint/TNS_best.pt
 The inference script:
 
 ```
-LesionDetection/yolo_inference.py
+LesionDetection/inference.py
 ```
 
 ---
@@ -423,7 +423,7 @@ LesionDetection/yolo_inference.py
 #### ⚡ Inference on GPU (CUDA)
 
 ```bash
-python yolo_inference.py   --weights LesionDetection/checkpoint/TNS_best.pt   --img_path LesionDetection/input/test1.jpg   --save_path LesionDetection/output/test1.jpg   --device cuda   --conf 0.25
+python LesionDetection/inference.py   --weights LesionDetection/checkpoint/TNS_best.pt   --img_path LesionDetection/input/test1.jpg   --save_path LesionDetection/output/test1.jpg   --device cuda   --conf 0.25
 ```
 
 ---
@@ -431,7 +431,7 @@ python yolo_inference.py   --weights LesionDetection/checkpoint/TNS_best.pt   --
 #### 🖥️ Inference on CPU
 
 ```bash
-python yolo_inference.py   --weights LesionDetection/checkpoint/TNS_best.pt   --img_path LesionDetection/input/test2.jpg   --save_path LesionDetection/output/test2.jpg   --device cpu   --conf 0.25
+python LesionDetection/inference.py   --weights LesionDetection/checkpoint/TNS_best.pt   --img_path LesionDetection/input/test2.jpg   --save_path LesionDetection/output/test2.jpg   --device cpu   --conf 0.25
 ```
 
 ---
