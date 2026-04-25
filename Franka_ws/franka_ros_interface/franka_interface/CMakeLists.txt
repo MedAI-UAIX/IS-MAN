@@ -78,6 +78,7 @@ add_dependencies(custom_franka_control_node
 )
 
 target_link_libraries(custom_franka_control_node
+  franka_hw
   ${Franka_LIBRARIES}
   ${franka_control_LIBRARIES}
   # franka_control_services
