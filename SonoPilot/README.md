@@ -34,6 +34,7 @@ Includes:
 - MoveIt
 - Franka ROS Interface
 - Python ≥3.7
+- libfranka ≥0.13.0
 
 
 ---
