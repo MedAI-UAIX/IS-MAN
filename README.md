@@ -34,17 +34,6 @@ IS-MAN
 - **KeypointDetection**: Keypoint Detection for Thyroid Localization.
 - **Franka_ws**:   The ROS workspace designed for developing and running control applications for the Franka Emika Panda robot. It integrates the Franka ROS packages and provides a clean environment for real-time robot control, motion execution, and controller development.
 
----
-
-## Installation & Configuration
-
-**Environment Setup**
-
-```bash
-conda create -n franka python=3.10
-conda activate franka
-pip install -r requirements.txt
-```
 
 ---
 ---
@@ -67,6 +56,18 @@ This system enables seamless switching between:
 - Impedance Control
 - Hybrid Force-Position Control
 - Dynamic Controller Switching
+
+---
+
+## Installation & Configuration
+
+**Environment Setup**
+
+```bash
+conda create -n franka python=3.10
+conda activate franka
+pip install -r requirements.txt
+```
 
 ---
 
