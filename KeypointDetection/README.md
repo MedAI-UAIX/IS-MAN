@@ -33,7 +33,7 @@ yolo11m_pose_best_thy_ketpoint.pt
 Place the weights here:
 
 ```
-KeypointDetection\checkpoint/yolo11m_pose_best_thy_ketpoint.pt
+KeypointDetection/checkpoint/yolo11m_pose_best_thy_ketpoint.pt
 ```
 
 ---
