@@ -14,7 +14,7 @@ from std_msgs.msg import Float64, Float64MultiArray
 from nav_msgs.msg import Path
 from math import pi
 from tf.transformations import quaternion_from_matrix, quaternion_matrix
-from robotiq_ft_sensor.msg import ft_sensor  
+
 #线程
 import threading
 import numpy as np
