@@ -68,21 +68,21 @@ python KeypointDetection/inference.py   --weights KeypointDetection/checkpoint/y
 
 | Argument       | Type   | Default                                     | Description |
 |----------------|--------|---------------------------------------------|-------------|
-| `--weights`    | str    | `LesionDetection/checkpoint/TNS_best.pt`    | Path to YOLO weights |
-| `--img_path`   | str    | `LesionDetection/input/test1.jpg`           | Input ultrasound image |
-| `--save_path`  | str    | `LesionDetection/output/test1_result.jpg`   | Output detection result |
+| `--weights`    | str    | `KeypointDetection/checkpoint/yolo11m_pose_best_thy_keypoint.pt`    | Path to pretrained YOLO-Pose weights |
+| `--img_path`   | str    | `KeypointDetection/input/test1.jpg`           | Input image |
+| `--save_path`  | str    | `KeypointDetection/output/thyroid_keypoint_result1.jpg`   | Output detection result |
 | `--device`     | str    | `cuda`                                      | cuda or cpu |
-| `--conf`       | float  | `0.25`                                      | Confidence threshold |
+| `--conf`       | float  | `0.3`                                      | Confidence threshold |
 
 ---
 
 # 🖼️ Example Results
 
 ## Input Image
-![input](demo/../../demo/demo_detection_input.jpg)
+![input](https://github.com/MedAI-UAIX/IS-MAN/blob/main/demo/demo_keypoint_input.png)
 
 ## Output Image
-![ouput](demo/../../demo/demo_detection_output.jpg)
+![ouput](https://github.com/MedAI-UAIX/IS-MAN/blob/main/demo/demo_keypoint_output.png)
 
 ---
 
