@@ -26,7 +26,7 @@ It is optimized for the characteristics of **B-mode ultrasound**, including nois
 
 ---
 
-# 📦 Pretrained Weights
+## 📌 Pretrained Weights
 
 Ours YOLO weights can be downloaded from:
 
@@ -57,7 +57,7 @@ LesionDetection/inference.py
 
 ---
 
-## ⚡ Inference on GPU (CUDA)
+# ⚡ CUDA Inference
 
 ```bash
 python LesionDetection/inference.py   --weights LesionDetection/checkpoint/TNS_best.pt   --img_path LesionDetection/input/test1.jpg   --save_path LesionDetection/output/test1.jpg   --device cuda   --conf 0.25
@@ -65,7 +65,7 @@ python LesionDetection/inference.py   --weights LesionDetection/checkpoint/TNS_b
 
 ---
 
-## 🖥️ Inference on CPU
+# 🖥️ CPU Inference
 
 ```bash
 python LesionDetection/inference.py   --weights LesionDetection/checkpoint/TNS_best.pt   --img_path LesionDetection/input/test2.jpg   --save_path LesionDetection/output/test2.jpg   --device cpu   --conf 0.25
@@ -73,7 +73,7 @@ python LesionDetection/inference.py   --weights LesionDetection/checkpoint/TNS_b
 
 ---
 
-# 🔧 Command Line Arguments
+# ⚙️ Parameters
 
 | Argument       | Type   | Default                                     | Description |
 |----------------|--------|---------------------------------------------|-------------|
@@ -85,16 +85,17 @@ python LesionDetection/inference.py   --weights LesionDetection/checkpoint/TNS_b
 
 ---
 
-# 🖼️ Example Results
+# 🖼️ Visualization
 
-## Input Image
+## **Input Image**
+
 ![input](demo/../../demo/demo_detection_input.jpg)
 
-## Output Image
+## **Output Image**
+
 ![ouput](demo/../../demo/demo_detection_output.jpg)
 
 ---
 
 # 📬 Contact
-
 For issues or improvements, please open an Issue.
