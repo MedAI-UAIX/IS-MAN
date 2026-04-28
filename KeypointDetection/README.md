@@ -1,6 +1,6 @@
 # Keypoint Detection for Thyroid Localization
 
-![Keypoint Overview](demo/../../demo/demo_keypoint.jpg)
+![Keypoint Overview](demo/demo_keypoint.jpg)
 
 ## 🩺 Model Description
 
@@ -17,7 +17,7 @@ This module is designed to perform keypoint detection tasks. It takes the origin
 
 ---
 
-# 📦 Pretrained Weights
+## 📌 Pretrained Weights
 
 Ours YOLO weights can be downloaded from:
 
@@ -48,7 +48,7 @@ KeypointDetection/inference.py
 
 ---
 
-## ⚡ Inference on GPU (CUDA)
+# ⚡ CUDA Inference
 
 ```bash
 python KeypointDetection/inference.py   --weights KeypointDetection/checkpoint/yolo11m_pose_best_thy_keypoint.pt   --img_path KeypointDetection/input/test1.jpg   --save_path KeypointDetection/output/thyroid_keypoint_result1.jpg   --device cuda
@@ -56,7 +56,7 @@ python KeypointDetection/inference.py   --weights KeypointDetection/checkpoint/y
 
 ---
 
-## 🖥️ Inference on CPU
+# 🖥️ CPU Inference
 
 ```bash
 python KeypointDetection/inference.py   --weights KeypointDetection/checkpoint/yolo11m_pose_best_thy_keypoint.pt   --img_path KeypointDetection/input/test1.jpg   --save_path KeypointDetection/output/thyroid_keypoint_result1.jpg   --device cpu
@@ -64,7 +64,7 @@ python KeypointDetection/inference.py   --weights KeypointDetection/checkpoint/y
 
 ---
 
-# 🔧 Command Line Arguments
+# ⚙️ Parameters
 
 | Argument       | Type   | Default                                     | Description |
 |----------------|--------|---------------------------------------------|-------------|
@@ -76,16 +76,17 @@ python KeypointDetection/inference.py   --weights KeypointDetection/checkpoint/y
 
 ---
 
-# 🖼️ Example Results
+# 🖼️ Visualization
 
-## Input Image
-![input](https://github.com/MedAI-UAIX/IS-MAN/blob/main/demo/demo_keypoint_input.png)
+## **Input Image**
 
-## Output Image
-![ouput](https://github.com/MedAI-UAIX/IS-MAN/blob/main/demo/demo_keypoint_output.png)
+![input](demo/demo_keypoint_input.png)
+
+## **Output Image**
+
+![ouput](demo/demo_keypoint_output.png)
 
 ---
 
 # 📬 Contact
-
 For issues or improvements, please open an Issue.
