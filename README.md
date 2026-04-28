@@ -256,15 +256,15 @@ In building our system, we also leverage **[LangChain](https://github.com/langch
 ---
 
 
-# Keypoint Detection for Thyroid Localization
+## Keypoint Detection for Thyroid Localization
 
 ![Keypoint Overview](demo/demo_keypoint.jpg)
 
-## 🩺 Model Description
+### 🩺 Model Description
 
 This module is designed to perform keypoint detection tasks. It takes the original image as input and outputs the coordinates and confidence scores of the detected keypoints.
 
-### **Key Features**
+#### **Key Features**
 - **Thyroid Localization via Keypoints**  
   Predicts sparse anatomical keypoints that characterize thyroid pose and morphology, enabling stable robotic alignment.
 
@@ -275,7 +275,7 @@ This module is designed to perform keypoint detection tasks. It takes the origin
 
 ---
 
-# 📦 Pretrained Weights
+### 📌 Pretrained Weights
 
 Ours YOLO weights can be downloaded from:
 
@@ -296,7 +296,7 @@ KeypointDetection/checkpoint/yolo11m_pose_best_thy_ketpoint.pt
 
 ---
 
-# 🚀 Inference Usage
+## 🚀 Inference Usage
 
 The inference script:
 
@@ -306,7 +306,7 @@ KeypointDetection/inference.py
 
 ---
 
-## ⚡ Inference on GPU (CUDA)
+## ⚡ CUDA Inference
 
 ```bash
 python KeypointDetection/inference.py   --weights KeypointDetection/checkpoint/yolo11m_pose_best_thy_keypoint.pt   --img_path KeypointDetection/input/test1.jpg   --save_path KeypointDetection/output/thyroid_keypoint_result1.jpg   --device cuda
@@ -314,7 +314,7 @@ python KeypointDetection/inference.py   --weights KeypointDetection/checkpoint/y
 
 ---
 
-## 🖥️ Inference on CPU
+## 🖥️ CPU Inference
 
 ```bash
 python KeypointDetection/inference.py   --weights KeypointDetection/checkpoint/yolo11m_pose_best_thy_keypoint.pt   --img_path KeypointDetection/input/test1.jpg   --save_path KeypointDetection/output/thyroid_keypoint_result1.jpg   --device cpu
@@ -322,7 +322,7 @@ python KeypointDetection/inference.py   --weights KeypointDetection/checkpoint/y
 
 ---
 
-# 🔧 Command Line Arguments
+## ⚙️ Parameters
 
 | Argument       | Type   | Default                                     | Description |
 |----------------|--------|---------------------------------------------|-------------|
@@ -334,12 +334,14 @@ python KeypointDetection/inference.py   --weights KeypointDetection/checkpoint/y
 
 ---
 
-# 🖼️ Example Results
+## 🖼️ Visualization
 
-## Input Image
+### **Input Image**
+
 ![input](demo/demo_keypoint_input.png)
 
-## Output Image
+### **Output Image**
+
 ![ouput](demo/demo_keypoint_output.png)
 
 
@@ -480,7 +482,7 @@ It is optimized for the characteristics of **B-mode ultrasound**, including nois
 
 ---
 
-### 📦 Pretrained Weights
+### 📌 Pretrained Weights
 
 Ours YOLO weights can be downloaded from:
 
@@ -501,7 +503,7 @@ LesionDetection/checkpoint/TNS_best.pt
 
 ---
 
-### 🚀 Inference Usage
+## 🚀 Inference Usage
 
 The inference script:
 
@@ -511,7 +513,7 @@ LesionDetection/inference.py
 
 ---
 
-#### ⚡ Inference on GPU (CUDA)
+## ⚡ CUDA Inference
 
 ```bash
 python LesionDetection/inference.py   --weights LesionDetection/checkpoint/TNS_best.pt   --img_path LesionDetection/input/test1.jpg   --save_path LesionDetection/output/test1.jpg   --device cuda   --conf 0.25
@@ -519,7 +521,7 @@ python LesionDetection/inference.py   --weights LesionDetection/checkpoint/TNS_b
 
 ---
 
-#### 🖥️ Inference on CPU
+## 🖥️ CPU Inference
 
 ```bash
 python LesionDetection/inference.py   --weights LesionDetection/checkpoint/TNS_best.pt   --img_path LesionDetection/input/test2.jpg   --save_path LesionDetection/output/test2.jpg   --device cpu   --conf 0.25
@@ -527,7 +529,7 @@ python LesionDetection/inference.py   --weights LesionDetection/checkpoint/TNS_b
 
 ---
 
-### 🔧 Command Line Arguments
+## ⚙️ Parameters
 
 | Argument       | Type   | Default                                     | Description |
 |----------------|--------|---------------------------------------------|-------------|
@@ -539,12 +541,14 @@ python LesionDetection/inference.py   --weights LesionDetection/checkpoint/TNS_b
 
 ---
 
-### 🖼️ Example Results
+## 🖼️ Visualization
 
-#### Input Image
+### **Input Image**
+
 ![input](demo/demo_detection_input.jpg)
 
-#### Output Image
+### **Output Image**
+
 ![ouput](demo/demo_detection_output.jpg)
 
 ---
