@@ -9,7 +9,7 @@ def parse_args():
     parser = argparse.ArgumentParser(description='Thyroid Keypoint Detection Inference')
     parser.add_argument('--weights', type=str, default='KeypointDetection\checkpoint\yolo11m_pose_best_thy_ketpoint.pt',
                         help='Path to pretrained YOLO-Pose weights')
-    parser.add_argument('--img_path', type=str, default='KeypointDetection\demo\image\test1.jpg',
+    parser.add_argument('--img_path', type=str, default='KeypointDetection\input\test1.jpg',
                         help='Path to input ultrasound image')
     parser.add_argument('--save_path', type=str, default='KeypointDetection/output/thyroid_keypoint_result1.jpg',
                         help='Path to save output result')
