@@ -1,6 +1,6 @@
 # Keypoint Detection for Thyroid Localization
 
-![Keypoint Overview](demo/demo_keypoint.jpg)
+![Keypoint Overview](https://github.com/MedAI-UAIX/IS-MAN/blob/main/demo/demo_keypoint.jpg)
 
 ## 🩺 Model Description
 
@@ -80,11 +80,11 @@ python KeypointDetection/inference.py   --weights KeypointDetection/checkpoint/y
 
 ## **Input Image**
 
-![input](demo/demo_keypoint_input.png)
+![input](https://github.com/MedAI-UAIX/IS-MAN/blob/main/demo/demo_keypoint_input.png)
 
 ## **Output Image**
 
-![ouput](demo/demo_keypoint_output.png)
+![ouput](https://github.com/MedAI-UAIX/IS-MAN/blob/main/demo/demo_keypoint_output.png)
 
 ---
 
