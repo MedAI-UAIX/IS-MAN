@@ -31,7 +31,7 @@ It is optimized for the characteristics of **B-mode ultrasound**, including nois
 Ours YOLO weights can be downloaded from:
 
 👉 **HuggingFace Model Hub**  
-https://huggingface.co/medaiming/ThyroidLesionDetection/tree/main
+https://huggingface.co/CJH104/ThyroidLesionDetection/tree/main
 
 Download:
 
@@ -52,7 +52,7 @@ LesionDetection/checkpoint/TNS_best.pt
 The inference script:
 
 ```
-LesionDetection/yolo_inference.py
+LesionDetection/inference.py
 ```
 
 ---
@@ -60,7 +60,7 @@ LesionDetection/yolo_inference.py
 ## ⚡ Inference on GPU (CUDA)
 
 ```bash
-python yolo_inference.py   --weights LesionDetection/checkpoint/TNS_best.pt   --img_path LesionDetection/input/test1.jpg   --save_path LesionDetection/output/test1.jpg   --device cuda   --conf 0.25
+python LesionDetection/inference.py   --weights LesionDetection/checkpoint/TNS_best.pt   --img_path LesionDetection/input/test1.jpg   --save_path LesionDetection/output/test1.jpg   --device cuda   --conf 0.25
 ```
 
 ---
@@ -68,7 +68,7 @@ python yolo_inference.py   --weights LesionDetection/checkpoint/TNS_best.pt   --
 ## 🖥️ Inference on CPU
 
 ```bash
-python yolo_inference.py   --weights LesionDetection/checkpoint/TNS_best.pt   --img_path LesionDetection/input/test2.jpg   --save_path LesionDetection/output/test2.jpg   --device cpu   --conf 0.25
+python LesionDetection/inference.py   --weights LesionDetection/checkpoint/TNS_best.pt   --img_path LesionDetection/input/test2.jpg   --save_path LesionDetection/output/test2.jpg   --device cpu   --conf 0.25
 ```
 
 ---
