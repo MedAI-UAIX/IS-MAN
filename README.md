@@ -258,7 +258,7 @@ In building our system, we also leverage **[LangChain](https://github.com/langch
 
 ## Keypoint Detection for Thyroid Localization
 
-![Keypoint Overview](demo/../../demo/demo_keypoint.jpg)
+![Keypoint Overview](demo/demo_keypoint.jpg)
 
 ## 🩺 Model Description
 
@@ -337,10 +337,10 @@ python KeypointDetection/inference.py   --weights KeypointDetection/checkpoint/y
 # 🖼️ Example Results
 
 ## Input Image
-![input](https://github.com/MedAI-UAIX/IS-MAN/blob/main/demo/demo_keypoint_input.png)
+![input](demo/demo_keypoint_input.png)
 
 ## Output Image
-![ouput](https://github.com/MedAI-UAIX/IS-MAN/blob/main/demo/demo_keypoint_output.png)
+![ouput](demo/demo_keypoint_output.png)
 
 
 ---
