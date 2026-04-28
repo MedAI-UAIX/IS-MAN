@@ -295,7 +295,7 @@ The inference script is located at:
 #### **Basic Command**
 
 ``` bash
-python Segmentation/inference.py     --img_path Segmentation/demo/image/thyroid.png     --checkpoint Segmentation/checkpoint/best.pth     --save_path Segmentation/output/thyroid.png     --device cuda
+python Segmentation/inference.py     --img_path Segmentation/input/thyroid.png     --checkpoint Segmentation/checkpoint/best.pth     --save_path Segmentation/output/thyroid.png     --device cuda
 ```
 
 ------------------------------------------------------------------------
@@ -303,7 +303,7 @@ python Segmentation/inference.py     --img_path Segmentation/demo/image/thyroid.
 ##### ⚡ CUDA Inference
 
 ``` bash
-python Segmentation/inference.py     --img_path Segmentation/demo/image/thyroid.png     --checkpoint Segmentation/checkpoint/best.pth     --save_path Segmentation/output/thyroid.png     --device cuda
+python Segmentation/inference.py     --img_path Segmentation/input/thyroid.png     --checkpoint Segmentation/checkpoint/best.pth     --save_path Segmentation/output/thyroid.png     --device cuda
 ```
 
 ------------------------------------------------------------------------
@@ -311,7 +311,7 @@ python Segmentation/inference.py     --img_path Segmentation/demo/image/thyroid.
 ##### 🖥️ CPU Inference
 
 ``` bash
-python Segmentation/inference.py     --img_path Segmentation/demo/image/thyroid.png     --checkpoint Segmentation/checkpoint/best.pth     --save_path Segmentation/output/thyroid.png     --device cpu
+python Segmentation/inference.py     --img_path Segmentation/input/thyroid.png     --checkpoint Segmentation/checkpoint/best.pth     --save_path Segmentation/output/thyroid.png     --device cpu
 ```
 
 ------------------------------------------------------------------------
