@@ -256,7 +256,7 @@ In building our system, we also leverage **[LangChain](https://github.com/langch
 ---
 
 
-## Keypoint Detection for Thyroid Localization
+# Keypoint Detection for Thyroid Localization
 
 ![Keypoint Overview](demo/demo_keypoint.jpg)
 
