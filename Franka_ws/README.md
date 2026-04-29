@@ -14,7 +14,7 @@ This workspace serves as the foundational layer for [SonoPilot](https://github.c
   Supports dynamic loading and switching of multiple controllers required for compliant ultrasound scanning.
 
 -  **Perception-Action Loop**  
-  Receives anatomical keypoints and lesion targets from upstream AI modules (e.g., [KeypointDetection](https://github.com/MedAI-UAIX/IS-MAN/tree/main/KeypointDetection) and [Segmentation](https://github.com/MedAI-UAIX/IS-MAN/tree/main/Segmentation)) to dynamically adjust scanning trajectories.
+  Receives anatomical keypoints and lesion targets from upstream AI modules to dynamically adjust scanning trajectories.
 
 -  **Native Safety Constraints**  
   Integrates libfranka safety controllers for real-time collision detection, joint limits, and Cartesian force/torque monitoring.
