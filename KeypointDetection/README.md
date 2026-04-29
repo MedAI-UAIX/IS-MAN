@@ -11,7 +11,7 @@ This module is designed to perform keypoint detection tasks. It takes the origin
   Predicts sparse anatomical keypoints that characterize thyroid pose and morphology, enabling stable robotic alignment.
 
 - **High Inference Efficiency**  
-  Powered by YOLO-Pose for fast inference suitable for real‑time or near‑real‑time clinical use.
+  Powered by [YOLO-Pose](https://github.com/ultralytics/ultralytics) for fast inference suitable for real‑time or near‑real‑time clinical use.
 
 
 
