@@ -42,7 +42,7 @@ Follow these steps to set up the Franka ROS workspace.
 
 ---
 
-1. **Create Conda Environment**
+**Create Conda Environment**
 
 ```bash
 conda create -n franka python=3.10
