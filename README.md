@@ -27,12 +27,12 @@ IS-MAN
 └── Franka_ws
 ```
 
-- **SonoPilot**: Implementations of hybrid force–position control, impedance control, and Cartesian position control for the robotic manipulator.
-- **SonoMind**: The multi-agent framework coordinating perception, control, and decision modules as used in the autonomous workflow.
-- **Segmentation**: Real-time segmentation: a segmentation pipeline supporting multiple target anatomies (thyroid, carotid artery, liver, trachea) with inference scripts and model configurations for clinical deployment.
-- **LesionDetection**: Thyroid-nodule detection module with inference scripts.
-- **KeypointDetection**: Keypoint Detection for Thyroid Localization.
-- **Franka_ws**:   The ROS workspace designed for developing and running control applications for the Franka Emika Panda robot. It integrates the Franka ROS packages and provides a clean environment for real-time robot control, motion execution, and controller development.
+- [**SonoPilot**](https://github.com/MedAI-UAIX/IS-MAN/tree/main/SonoPilot): Implementations of hybrid force–position control, impedance control, and Cartesian position control for the robotic manipulator.
+- [**SonoMind**](https://github.com/MedAI-UAIX/IS-MAN/tree/main/SonoMind): The multi-agent framework coordinating perception, control, and decision modules as used in the autonomous workflow.
+- [**Segmentation**](https://github.com/MedAI-UAIX/IS-MAN/tree/main/Segmentation): Real-time segmentation: a segmentation pipeline supporting multiple target anatomies (thyroid, carotid artery, liver, trachea) with inference scripts and model configurations for clinical deployment.
+- [**LesionDetection**](https://github.com/MedAI-UAIX/IS-MAN/tree/main/LesionDetection): Thyroid-nodule detection module with inference scripts.
+- [**KeypointDetection**](https://github.com/MedAI-UAIX/IS-MAN/tree/main/KeypointDetection): Keypoint Detection for Thyroid Localization.
+- [**Franka_ws**](https://github.com/MedAI-UAIX/IS-MAN/tree/main/Franka_ws):   The ROS workspace designed for developing and running control applications for the [Franka Emika Panda](https://franka.de/) robot. It integrates the Franka ROS packages and provides a clean environment for real-time robot control, motion execution, and controller development.
 
 
 ---
@@ -71,7 +71,7 @@ pip install -r requirements.txt
 
 ---
 
-### 📂 Key File: `ForcePosition_calib.py`
+### 📂 Key File: [`ForcePosition_calib.py`](https://github.com/MedAI-UAIX/IS-MAN/blob/main/SonoPilot/ForcePosition_calib.py)
 
 Includes:
 
@@ -83,12 +83,12 @@ Includes:
 ---
 
 ### 📌 Dependencies
-- Ubuntu 20.04
-- ROS Noetic
-- MoveIt
-- Franka ROS Interface
+- [Ubuntu 20.04](https://releases.ubuntu.com/20.04/)
+- [ROS Noetic](https://wiki.ros.org/noetic)
+- [MoveIt](https://moveit.ai/)
+- [Franka ROS Interface](https://github.com/frankarobotics/franka_ros)
 - Python ≥3.7
-- libfranka ≥0.13.0
+- [libfranka ≥0.13.0](https://github.com/frankarobotics/libfranka)
 
 
 ---
@@ -239,13 +239,13 @@ python agents/triage_agent.py
 
 ### Model Foundation
 
-Our system is built upon the **Qwen3 family of models**, including:
+Our system is built upon the [**Qwen3 family of models**](https://huggingface.co/Qwen), including:
 
 - **[Qwen3-8B](https://huggingface.co/Qwen/Qwen3-8B)**
 - **[Qwen3-4B](https://huggingface.co/Qwen/Qwen3-4B-Instruct-2507)**
 - **[Qwen3-8B-VL](https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct)**
 
-These models are trained and accessed using **LLaMAFactory**, following the official implementations and usage guidelines provided by the Qwen team. We sincerely appreciate their contributions to the open-source community.  
+These models are trained and accessed using [**LLaMAFactory**](https://github.com/hiyouga/LlamaFactory/tree/main), following the official implementations and usage guidelines provided by the Qwen team. We sincerely appreciate their contributions to the open-source community.  
 
 - **[LLaMAFactory Repository](https://github.com/hiyouga/LLaMA-Factory/tree/main)**
 
@@ -269,7 +269,7 @@ This module is designed to perform keypoint detection tasks. It takes the origin
   Predicts sparse anatomical keypoints that characterize thyroid pose and morphology, enabling stable robotic alignment.
 
 - **High Inference Efficiency**  
-  Powered by YOLO-Pose for fast inference suitable for real‑time or near‑real‑time clinical use.
+  Powered by [YOLO-Pose](https://github.com/ultralytics/ultralytics) for fast inference suitable for real‑time or near‑real‑time clinical use.
 
 
 
@@ -582,5 +582,11 @@ This project builds upon several open-source projects and pretrained models. We 
 
 - **Gemma & MedGemma Models**  
   https://huggingface.co/google
+
+- **Ultralytics YOLO**  
+  https://github.com/ultralytics/ultralytics
+
+- **FishBot ROS Installation Tool**  
+  https://github.com/fishros/install
 
 All code and models are used under their respective licenses. Please refer to their original repositories for license details.
