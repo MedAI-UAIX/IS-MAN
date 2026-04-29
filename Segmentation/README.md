@@ -100,13 +100,7 @@ python Segmentation/inference.py     --img_path Segmentation/input/thyroid.png  
 | 4     | Liver          | (0, 255, 0)    |
 
 
-------------------------------------------------------------------------
-
-# 📬 Contact
-Feel free to open an Issue if you have any questions.
-
 ---
 
-## 📚 Citation
-
-If you use this work, please cite our IS-MAN project paper on robotic thyroid ultrasound screening.
+# 📬 Contact
+For issues or improvements, please open an Issue.
