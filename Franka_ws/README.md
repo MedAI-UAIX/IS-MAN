@@ -4,7 +4,7 @@
 
 This directory contains the ROS workspace designed for developing and running control applications for the [Franka Emika Panda​](https://franka.de/) robot within the IS-MAN system.
 It integrates the official Franka ROS packages (franka_ros) along with custom controllers and configuration files, providing a clean and robust environment for real-time robot control, motion execution, and controller development essential for autonomous ultrasound scanning.
-This workspace serves as the foundational layer for SonoPilot, enabling seamless switching between Cartesian position control, impedance control, and hybrid force-position control.
+This workspace serves as the foundational layer for [SonoPilot](https://github.com/MedAI-UAIX/IS-MAN/tree/main/SonoPilot), enabling seamless switching between Cartesian position control, impedance control, and hybrid force-position control.
 
 ### **Key Features**
 - **Integrated Franka ROS Stack**  
@@ -14,7 +14,7 @@ This workspace serves as the foundational layer for SonoPilot, enabling seamless
   Supports dynamic loading and switching of multiple controllers required for compliant ultrasound scanning.
 
 -  **Perception-Action Loop**  
-  Receives anatomical keypoints and lesion targets from upstream AI modules to dynamically adjust scanning trajectories.
+  Receives anatomical keypoints and lesion targets from upstream AI modules (e.g., [KeypointDetection](https://github.com/MedAI-UAIX/IS-MAN/tree/main/KeypointDetection) and [Segmentation](https://github.com/MedAI-UAIX/IS-MAN/tree/main/Segmentation)) to dynamically adjust scanning trajectories.
 
 -  **Native Safety Constraints**  
   Integrates libfranka safety controllers for real-time collision detection, joint limits, and Cartesian force/torque monitoring.
