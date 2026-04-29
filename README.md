@@ -569,7 +569,7 @@ This project builds upon several open-source projects and pretrained models. We 
   https://github.com/frankaemika/libfranka
 
 - **DFMS-Net** for benchmarking
-https://github.com/LeapLabTHU/UltraBot
+  https://github.com/LeapLabTHU/UltraBot
 
 - **VariaNet** for benchmarking
   https://github.com/Ciel04sk/SCUT_Thyroid_DataSet
