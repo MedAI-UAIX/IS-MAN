@@ -2,7 +2,7 @@
 
 ## 📍 Overview
 
-This directory contains the ROS workspace designed for developing and running control applications for the Franka Emika Panda​ robot within the IS-MAN system.
+This directory contains the ROS workspace designed for developing and running control applications for the [Franka Emika Panda​](https://franka.de/) robot within the IS-MAN system.
 It integrates the official Franka ROS packages (franka_ros) along with custom controllers and configuration files, providing a clean and robust environment for real-time robot control, motion execution, and controller development essential for autonomous ultrasound scanning.
 This workspace serves as the foundational layer for SonoPilot, enabling seamless switching between Cartesian position control, impedance control, and hybrid force-position control.
 
@@ -31,14 +31,14 @@ This workspace serves as the foundational layer for SonoPilot, enabling seamless
 Follow these steps to set up the Franka ROS workspace.
 
 ### 📌 Dependencies
-- Ubuntu 20.04
+- [Ubuntu 20.04](https://releases.ubuntu.com/20.04/)
 - ROS Noetic
 - MoveIt
 - Franka ROS Interface
 - Python ≥3.7
 - libfranka ≥0.13.0
-- OpenCV
-- ROS (for real-time robot control)
+- [OpenCV](https://opencv.org/)
+- [FishBot ROS Installation Tool](https://github.com/fishros/install) (recommended for simplified ROS setup)
 
 ---
 
@@ -140,3 +140,34 @@ franka.switch_controllers(
 | `strictness` | `int` | Controller switch strictness. `0`: best-effort, `1`: medium strict, `2`: fully strict. |
 | `start_asap` | `bool` | Whether to start the new controller as soon as possible. |
 | `timeout` | `float` | Timeout (in seconds) to complete the switch. Raises error if timeout exceeded. |
+
+---
+---
+
+
+## License
+
+All source code in this workspace is made available under the Apache-2.0 License.
+
+---
+
+## 🔗 Dependencies and Acknowledgements
+
+We gratefully acknowledge the following open-source projects and frameworks:
+
+- **libfranka** - Low-level robotic control library  
+  https://github.com/frankaemika/libfranka
+
+- **franka_ros** - Official ROS packages for Franka robots
+  https://github.com/frankarobotics/franka_ros
+
+- **MoveIt** - Motion planning framework
+  https://moveit.ai/
+
+- **ROS Noetic** - Robot Operating System
+  https://wiki.ros.org/noetic
+
+- **FishBot ROS Installation Tool** - Simplified ROS environment setup and dependency management
+  https://github.com/fishros/install
+
+All code and models are used under their respective licenses. Please refer to their original repositories for license details.
