@@ -32,11 +32,11 @@ Follow these steps to set up the Franka ROS workspace.
 
 ### 📌 Dependencies
 - [Ubuntu 20.04](https://releases.ubuntu.com/20.04/)
-- ROS Noetic
-- MoveIt
-- Franka ROS Interface
+- [ROS Noetic](https://wiki.ros.org/noetic)
+- [MoveIt](https://moveit.ai/)
+- [Franka ROS Interface](https://github.com/frankarobotics/franka_ros)
 - Python ≥3.7
-- libfranka ≥0.13.0
+- [libfranka ≥0.13.0](https://github.com/frankarobotics/libfranka)
 - [OpenCV](https://opencv.org/)
 - [FishBot ROS Installation Tool](https://github.com/fishros/install) (recommended for simplified ROS setup)
 
