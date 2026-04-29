@@ -127,9 +127,7 @@ franka.switch_controllers(
 | `start_asap` | `bool` | Whether to start the new controller as soon as possible. |
 | `timeout` | `float` | Timeout (in seconds) to complete the switch. Raises error if timeout exceeded. |
 
-
 ---
 
-## 📚 Citation
-
-If you use this work, please cite our IS-MAN project paper on robotic thyroid ultrasound screening.
+# 📬 Contact
+For issues or improvements, please open an Issue.
