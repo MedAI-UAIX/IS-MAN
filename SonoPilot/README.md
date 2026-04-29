@@ -17,6 +17,18 @@ This system enables seamless switching between:
 
 ---
 
+## Installation & Configuration
+
+**Environment Setup**
+
+```bash
+conda create -n franka python=3.10
+conda activate franka
+pip install -r requirements.txt
+```
+
+---
+
 ## 📂 Key File: `ForcePosition_calib.py`
 
 Includes:
