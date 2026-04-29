@@ -52,13 +52,13 @@ cd IS-MAN/Franka_ws
 2. **Create src directory**
 
 ```bash
-mkdir -p ~/IS-MAN-main/Franka_ws/src
+mkdir -p ~/IS-MAN/Franka_ws/src
 ```
 
 3. **Initialize the workspace**
 
 ```bash
-cd ~/IS-MAN-main/Franka_ws/src
+cd ~/IS-MAN/Franka_ws/src
 catkin_init_workspace
 ```
 
@@ -67,12 +67,6 @@ catkin_init_workspace
 ```bash
 cd ..
 catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python3
-```
-
-5. **Activate environment variables**
-
-```bash
-source IS-MAN-main/Franka_ws/devel/setup.bash
 ```
 
 ---
