@@ -142,32 +142,6 @@ franka.switch_controllers(
 | `timeout` | `float` | Timeout (in seconds) to complete the switch. Raises error if timeout exceeded. |
 
 ---
----
 
-
-## License
-
-All source code in this workspace is made available under the Apache-2.0 License.
-
----
-
-## 🔗 Dependencies and Acknowledgements
-
-We gratefully acknowledge the following open-source projects and frameworks:
-
-- **libfranka** - Low-level robotic control library  
-  https://github.com/frankaemika/libfranka
-
-- **franka_ros** - Official ROS packages for Franka robots
-  https://github.com/frankarobotics/franka_ros
-
-- **MoveIt** - Motion planning framework
-  https://moveit.ai/
-
-- **ROS Noetic** - Robot Operating System
-  https://wiki.ros.org/noetic
-
-- **FishBot ROS Installation Tool** - Simplified ROS environment setup and dependency management
-  https://github.com/fishros/install
-
-All code and models are used under their respective licenses. Please refer to their original repositories for license details.
+# 📬 Contact
+For issues or improvements, please open an Issue.
