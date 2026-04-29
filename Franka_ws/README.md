@@ -42,12 +42,37 @@ Follow these steps to set up the Franka ROS workspace.
 
 ---
 
-**Create Conda Environment**
+1. **Clone the repository**
 
 ```bash
-conda create -n franka python=3.10
-conda activate franka
-pip install -r requirements.txt
+git clone https://github.com/MedAI-UAIX/IS-MAN.git
+cd IS-MAN/Franka_ws
+```
+
+2. **Create src directory**
+
+```bash
+mkdir -p ~/IS-MAN-main/Franka_ws/src
+```
+
+3. **Initialize the workspace**
+
+```bash
+cd ~/IS-MAN-main/Franka_ws/src
+catkin_init_workspace
+```
+
+4. **Build the workspace**
+
+```bash
+cd ..
+catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python3
+```
+
+5. **Activate environment variables**
+
+```bash
+source IS-MAN-main/Franka_ws/devel/setup.bash
 ```
 
 
