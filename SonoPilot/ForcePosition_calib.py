@@ -1,6 +1,5 @@
 #!/usr/bin/env python2.7
 #encoding:utf-8 
-# LiMD
 # MedAI
 """
 
@@ -10,18 +9,18 @@ from geometry_msgs.msg import PoseStamped, Pose
 from dynamic_reconfigure.msg import Config, ConfigDescription, BoolParameter, DoubleParameter, GroupState
 from franka_msgs.msg import FrankaState, ErrorRecoveryActionGoal
 from dynamic_reconfigure.srv import Reconfigure, ReconfigureRequest
-from std_msgs.msg import Float64, Float64MultiArray
+# from std_msgs.msg import Float64, Float64MultiArray
 from nav_msgs.msg import Path
 from math import pi
 from tf.transformations import quaternion_from_matrix, quaternion_matrix
-
+# from robotiq_ft_sensor.msg import ft_sensor  
 #线程
 import threading
 import numpy as np
 from get_path_intP import cartesian_pose_callback_impedance, pos_matrix_to_quat_hm
 import time
 import copy
-import scipy.linalg as la
+# import scipy.linalg as la
 from controller_manager_msgs.srv import LoadController, UnloadController, SwitchController, ListControllers, ListControllerTypes, ReloadControllerLibraries
 
 
@@ -30,7 +29,9 @@ class MoveItFranka:
         #初始化ROS节点
         if init_node:
             rospy.init_node('Franka_position_force_control', anonymous=True)
+            print("init node succesfully")
         self.update_param(is_scaning=False)   
+        print('init_node')
 
         self.publisher()
         self.listener_thread()
@@ -245,7 +246,7 @@ class MoveItFranka:
         server_parameter_call = rospy.ServiceProxy('/position_force_hybird_controller/dynamic_reconfigure_position_force_param_node/set_parameters', Reconfigure)
         respone = server_parameter_call(config_msg)
 
-    def impedance_2_hybrid(self, is_scaning, translational_stiffness, rotational_stiffness, ext_force, force_p, force_I, force_D,  safety_threshold=1.5 ):
+    def impedance_2_hybrid(self, is_scaning=False, translational_stiffness=300., rotational_stiffness=50., ext_force=0., force_p=1.17, force_I=0.07, force_D=5., safety_threshold=1.5 ):
         if ext_force<safety_threshold:
             pass
         else:
@@ -263,6 +264,7 @@ class MoveItFranka:
         self.update_param(is_scaning=is_scaning, translational_stiffness=translational_stiffness, rotational_stiffness=rotational_stiffness, 
                                                     ext_force=ext_force, 
                                                     force_p=force_p, force_I=force_I, force_D=force_D)
+        print('finish update_param')
             
     def hybrid_2_impedance(self):
         current_pose = copy.deepcopy(self.current_pose)
@@ -569,6 +571,17 @@ class MoveItFranka:
 
 if  __name__ == "__main__":
     franka =  MoveItFranka()
-    franka.go_home()
+    # franka.go_home()
 
+    # franka.switch_controllers(
+        
+    #     [franka.cartesian_position_controller_name],
+    #     [franka.hybrid_force_position_controller_name]
+    # )
+
+    # franka.hybrid_2_impedance()
+    # franka.update_param(is_scaning=False, translational_stiffness=300, rotational_stiffness=50)
+
+    franka.impedance_2_hybrid()
+    franka.update_param(is_scaning=True, ext_force=2)
 

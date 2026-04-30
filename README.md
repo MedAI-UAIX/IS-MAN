@@ -95,6 +95,19 @@ Includes:
 
 ### 🚀 Controller Usage Examples
 
+#### Dynamic Controller Switching
+list_controllers() – Check Controller Status
+Before switching controllers, it is highly recommended to check the current status of all available controllers to ensure a valid transition.
+```python
+franka.switch_controllers(
+    start_controllers=['desired_controller'], # Must be currently 'stopped'
+    stop_controllers=['current_controller'], # Must be currently 'running'
+    strictness=2,
+    start_asap=True,
+    timeout=1
+)
+```
+
 #### Cartesian Position Controller
 
 ```python
@@ -119,18 +132,6 @@ franka.update_param(is_scaning=False, translational_stiffness=300, rotational_st
 franka = MoveItFranka()
 franka.impedance_2_hybrid()
 franka.update_param(is_scaning=True, ext_force=2)
-```
-
-#### Dynamic Controller Switching
-
-```python
-franka.switch_controllers(
-    start_controllers=['desired_controller'],
-    stop_controllers=['current_controller'],
-    strictness=2,
-    start_asap=True,
-    timeout=1
-)
 ```
 
 

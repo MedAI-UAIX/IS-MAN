@@ -49,24 +49,28 @@ git clone https://github.com/MedAI-UAIX/IS-MAN.git
 cd IS-MAN/Franka_ws
 ```
 
-2. **Create src directory**
+2. **Build the workspace**
 
 ```bash
-mkdir -p ~/IS-MAN/Franka_ws/src
-```
-
-3. **Initialize the workspace**
-
-```bash
-cd ~/IS-MAN/Franka_ws/src
-catkin_init_workspace
-```
-
-4. **Build the workspace**
-
-```bash
-cd ..
 catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python3
+```
+
+3. **Source ROS workspace**
+
+```bash
+source devel/setup.bash
+```
+
+4. **Start ROS Master**
+Open the first terminal and start the ROS core:
+```bash
+roscore
+```
+
+5. **Launch Position-Force Controller**
+Open a second terminal and launch the controller:
+```bash
+roslaunch franka_example_controllers position_force_example.launch
 ```
 
 ---
