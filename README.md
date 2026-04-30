@@ -52,10 +52,11 @@ IS-MAN
 
 This system enables seamless switching between:
 
+- Dynamic Controller Switching
 - Cartesian Position Control
 - Impedance Control
 - Hybrid Force-Position Control
-- Dynamic Controller Switching
+
 
 ---
 
