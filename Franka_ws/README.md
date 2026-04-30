@@ -62,12 +62,14 @@ source devel/setup.bash
 ```
 
 4. **Start ROS Master**
+
 Open the first terminal and start the ROS core:
 ```bash
 roscore
 ```
 
 5. **Launch Position-Force Controller**
+
 Open a second terminal and launch the controller:
 ```bash
 roslaunch franka_example_controllers position_force_example.launch
