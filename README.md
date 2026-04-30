@@ -96,12 +96,18 @@ Includes:
 
 ### 🚀 Controller Usage Examples
 
-#### Dynamic Controller Switching
+### Dynamic Controller Switching
+
 list_controllers() – Check Controller Status
+
+⚠️ **Rule**: 
+- `start_controllers`: **Only accepts controllers currently in the `stopped` state.**
+- `stop_controllers`: **Only accepts controllers currently in the `running` state.**
+
 ```python
 franka.switch_controllers(
-    start_controllers=['desired_controller'], # Must be currently 'stopped'
-    stop_controllers=['current_controller'], # Must be currently 'running'
+    start_controllers=['desired_controller'],
+    stop_controllers=['current_controller'],
     strictness=2,
     start_asap=True,
     timeout=1
