@@ -466,10 +466,8 @@ void cartesian_position_force_hybird_controller::equilibriumPoseCallback(
   // }
 
   // //位置控制
-  franka::RobotState initial_state = cartesian_pose_handle_->getRobotState().O_T_EE_c;
-
+  std::array<double, 16> initial_state = cartesian_pose_handle_->getRobotState().O_T_EE_c;
   elapsed_time_ = ros::Duration(0.0);
-
   Eigen::Affine3d initial_transform(Eigen::Matrix4d::Map(initial_state.data()));
   position_d_ = initial_transform.translation();
   orientation_d_ = initial_transform.rotation();

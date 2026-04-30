@@ -25,6 +25,7 @@
 //笛卡尔位置控制
 #include <array>
 #include <franka_hw/franka_cartesian_command_interface.h>
+#include <franka_hw/trigger_rate.h>
 
 
 namespace franka_example_controllers {
@@ -101,6 +102,9 @@ public controller_interface::MultiInterfaceController<
   // std::array<double, 16> initial_state{};
   std::array<double, 6> parax,paray,paraz;
   double moving_time_;
+
+  franka_hw::TriggerRate rate_trigger_{30.0};
+
   void fifth_intP(std::array<double, 6>& parameter, double start, double end, double timelen); 
 
 double getintP(std::array<double, 6> parameter, double time);

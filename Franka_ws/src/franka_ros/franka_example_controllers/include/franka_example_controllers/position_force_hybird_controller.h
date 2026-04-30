@@ -10,6 +10,8 @@
 #include <controller_interface/multi_interface_controller.h>
 #include <dynamic_reconfigure/server.h>
 #include <geometry_msgs/PoseStamped.h>
+#include <geometry_msgs/Pose.h>
+#include <geometry_msgs/WrenchStamped.h>
 #include<franka_example_controllers/EndForceTorque.h>
 #include <hardware_interface/joint_command_interface.h>
 #include <hardware_interface/robot_hw.h>
@@ -73,6 +75,18 @@ class position_force_hybird_controller : public controller_interface::MultiInter
   ros::Subscriber sub_equilibrium_pose_;
 
   void equilibriumPoseCallback(const geometry_msgs::PoseStampedConstPtr& msg);
+
+  ros::Subscriber sub_f_ext_;
+  std::mutex f_ext_mutex_;
+  Eigen::Matrix<double, 6, 1> f_ext_measured_;
+  void f_ext_callback(const geometry_msgs::WrenchStamped::ConstPtr& msg);
+
+  ros::Subscriber sub_pose_;
+  void PoseCallback(const geometry_msgs::Pose::ConstPtr& msg);
+
+  ros::Subscriber sub_add_pose_;
+  void add_PoseCallback(const geometry_msgs::Pose::ConstPtr& msg);
+
 
     //publish the end force
   ros::Publisher pub_end_force_torque;

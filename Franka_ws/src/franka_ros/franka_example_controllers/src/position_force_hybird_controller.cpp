@@ -38,7 +38,7 @@ bool position_force_hybird_controller::init(hardware_interface::RobotHW* robot_h
   sub_pose_ = node_handle.subscribe(
       "required_pose", 20, &position_force_hybird_controller::PoseCallback, this,
       ros::TransportHints().reliable().tcpNoDelay());//get pose from the topic required_pose
-  sub_add_pose = node_handle.subscribe(
+  sub_add_pose_ = node_handle.subscribe(
       "add_pose", 20, &position_force_hybird_controller::add_PoseCallback, this,
       ros::TransportHints().reliable().tcpNoDelay());//get pose from the topic required_pose
   //pub_end_force_torque=node_handle.advertise<franka_example_controllers::EndForceTorque>("EndForceTorque",1);
@@ -379,7 +379,7 @@ void position_force_hybird_controller::add_PoseCallback(
  // dynamic_server_compliance_param_->updateConfig(); 可能要改接触状态，这里是为了将节点接受到的参数发给服务器
 }
 void position_force_hybird_controller::f_ext_callback(
-    const geometry_msgs::WrenchStampedConstPtr& msg) {
+    const geometry_msgs::WrenchStamped::ConstPtr& msg) {
   std::lock_guard<std::mutex> lock(f_ext_mutex_);
   f_ext_measured_ << msg->wrench.force.x,
                      msg->wrench.force.y,
