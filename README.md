@@ -97,7 +97,6 @@ Includes:
 
 #### Dynamic Controller Switching
 list_controllers() – Check Controller Status
-Before switching controllers, it is highly recommended to check the current status of all available controllers to ensure a valid transition.
 ```python
 franka.switch_controllers(
     start_controllers=['desired_controller'], # Must be currently 'stopped'
