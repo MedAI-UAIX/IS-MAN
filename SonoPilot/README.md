@@ -15,6 +15,17 @@ This system enables seamless switching between:
 - Impedance Control
 - Hybrid Force-Position Control
 
+---
+
+### Repository Structure
+
+```
+SonoPilot
+├── ForcePosition_calib.py
+├── get_path_intP.py
+├── README.md
+└── requirements.txt
+```
 
 ---
 
@@ -62,7 +73,7 @@ Includes:
 
 Dynamic controller switching is the mechanism that allows SonoPilot to transition smoothly between different control strategies (e.g., from free-space movement to tissue contact). 
 
-**Fundamental Rules:**
+Fundamental Rules:
 1.  **Check First**: Always query the system for the current status of all controllers.
 2.  **Match States**:
     *   `start_controllers`: **Only accepts controllers currently in the `stopped` state.**
@@ -77,7 +88,7 @@ franka = MoveItFranka()
 franka.list_controllers()
 ```
 
-**Expected Terminal Output:**
+Expected Terminal Output:
 
 ```python
 Controller name: position_force_hybird_controller
