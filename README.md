@@ -36,7 +36,7 @@ IS-MAN/
 - [**LesionDetection**](https://github.com/MedAI-UAIX/IS-MAN/tree/main/LesionDetection): Thyroid-nodule detection module with inference scripts.
 - [**KeypointDetection**](https://github.com/MedAI-UAIX/IS-MAN/tree/main/KeypointDetection): Keypoint Detection for Thyroid Localization.
 - [**Franka_ws**](https://github.com/MedAI-UAIX/IS-MAN/tree/main/Franka_ws):   The ROS workspace designed for developing and running control applications for the [Franka Emika Panda](https://franka.de/) robot. It integrates the Franka ROS packages and provides a clean environment for real-time robot control, motion execution, and controller development.
-- [**demo**](https://github.com/MedAI-UAIX/IS-MAN/tree/main/Franka_ws):   Contains sample images and visualizations demonstrating system capabilities across modules.
+- [**demo**](https://github.com/MedAI-UAIX/IS-MAN/tree/main/demo):   Contains sample images and visualizations demonstrating system capabilities across modules.
 
 
 ---
