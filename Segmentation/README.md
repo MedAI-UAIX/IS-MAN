@@ -12,6 +12,19 @@ The model supports both **CUDA (GPU)** and **CPU** inference.
 
 ------------------------------------------------------------------------
 
+## Repository Structure
+
+```
+Segmentation/
+├── README.md
+├── inference.py
+├── model/
+├── input/
+└── output/
+```
+
+------------------------------------------------------------------------
+
 ## 📌 Pretrained Weights
 **Ours pretrained weights are provided on HuggingFace.**
 

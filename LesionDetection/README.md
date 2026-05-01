@@ -22,7 +22,17 @@ It is optimized for the characteristics of **B-mode ultrasound**, including nois
 -  **Designed for Medical Ultrasound**  
   Tailored for grayscale thyroid ultrasound imaging scenarios.
 
+---
 
+## Repository Structure
+
+```
+LesionDetection/
+├── README.md
+├── inference.py
+├── input/
+└── output/
+```
 
 ---
 

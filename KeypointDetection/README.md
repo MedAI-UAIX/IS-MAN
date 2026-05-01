@@ -13,7 +13,17 @@ This module is designed to perform keypoint detection tasks. It takes the origin
 - **High Inference Efficiency**  
   Powered by [YOLO-Pose](https://github.com/ultralytics/ultralytics) for fast inference suitable for real‑time or near‑real‑time clinical use.
 
+---
 
+## Repository Structure
+
+```
+KeypointDetection/
+├── README.md
+├── inference.py
+├── input/
+└── output/
+```
 
 ---
 

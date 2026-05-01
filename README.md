@@ -18,13 +18,16 @@ IS-MAN was deployed and evaluated in a prospective human study with over 500 par
 ## Repository Structure
 
 ```
-IS-MAN
-├── SonoPilot
-├── SonoMind
-├── Segmentation
-├── LesionDetection
-├── KeypointDetection
-└── Franka_ws
+IS-MAN/
+├── SonoPilot                  # 🤖 Autonomous Scanning Control
+├── SonoMind                   # 🧠 LLM-Powered Multi-Agent Cognition
+├── Segmentation             # 🏥 Real-time Multi-Organ Segmentation
+├── LesionDetection          # 🔍 Thyroid Nodule Detection
+├── KeypointDetection        # 🎯 Anatomical Landmark Localization
+├── Franka_ws                # 🛠️ ROS Development Workspace
+├── demo                     # 🎥 System Demonstration Assets
+├── LICENSE
+└── README.md
 ```
 
 - [**SonoPilot**](https://github.com/MedAI-UAIX/IS-MAN/tree/main/SonoPilot): Implementations of hybrid force–position control, impedance control, and Cartesian position control for the robotic manipulator.
@@ -33,6 +36,7 @@ IS-MAN
 - [**LesionDetection**](https://github.com/MedAI-UAIX/IS-MAN/tree/main/LesionDetection): Thyroid-nodule detection module with inference scripts.
 - [**KeypointDetection**](https://github.com/MedAI-UAIX/IS-MAN/tree/main/KeypointDetection): Keypoint Detection for Thyroid Localization.
 - [**Franka_ws**](https://github.com/MedAI-UAIX/IS-MAN/tree/main/Franka_ws):   The ROS workspace designed for developing and running control applications for the [Franka Emika Panda](https://franka.de/) robot. It integrates the Franka ROS packages and provides a clean environment for real-time robot control, motion execution, and controller development.
+- [**demo**](https://github.com/MedAI-UAIX/IS-MAN/tree/main/Franka_ws):   Contains sample images and visualizations demonstrating system capabilities across modules.
 
 
 ---
@@ -71,7 +75,7 @@ SonoPilot
 
 ---
 
-## 📌 Dependencies
+### 📌 Dependencies
 
 The version requirements listed below are recommended configurations. Our code is designed to be compatible with most mainstream versions of these dependencies, but full compatibility testing has not been completed.
 - [Ubuntu 20.04](https://releases.ubuntu.com/20.04/)
@@ -83,7 +87,7 @@ The version requirements listed below are recommended configurations. Our code i
 
 ---
 
-## Installation & Configuration
+### Installation & Configuration
 
 **Environment Setup**
 
@@ -318,7 +322,17 @@ This module is designed to perform keypoint detection tasks. It takes the origin
 - **High Inference Efficiency**  
   Powered by [YOLO-Pose](https://github.com/ultralytics/ultralytics) for fast inference suitable for real‑time or near‑real‑time clinical use.
 
+---
 
+### Repository Structure
+
+```
+KeypointDetection/
+├── README.md
+├── inference.py
+├── input/
+└── output/
+```
 
 ---
 
@@ -407,6 +421,19 @@ python KeypointDetection/inference.py   --weights KeypointDetection/checkpoint/y
 This repository provides an inference implementation of a **UNet model with Reparameterizable Convolution blocks**, designed for multi-organ segmentation in ultrasound images (thyroid, carotid artery, trachea, liver).
 
 The model supports both **CUDA (GPU)** and **CPU** inference.
+
+------------------------------------------------------------------------
+
+### Repository Structure
+
+```
+Segmentation/
+├── README.md
+├── inference.py
+├── model/
+├── input/
+└── output/
+```
 
 ------------------------------------------------------------------------
 
@@ -525,7 +552,17 @@ It is optimized for the characteristics of **B-mode ultrasound**, including nois
 -  **Designed for Medical Ultrasound**  
   Tailored for grayscale thyroid ultrasound imaging scenarios.
 
+---
 
+### Repository Structure
+
+```
+LesionDetection/
+├── README.md
+├── inference.py
+├── input/
+└── output/
+```
 
 ---
 
