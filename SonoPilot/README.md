@@ -97,12 +97,6 @@ Controller name: franka_state_controller
 Controller state: running
 Controller name: cartesian_pose_ZJK_controller
 Controller state: stopped
-Controller name: position_force_hybird_controller
-Controller state: running
-Controller name: franka_state_controller
-Controller state: running
-Controller name: cartesian_pose_ZJK_controller
-Controller state: stopped
 ```
 
 #### Step 2: Construct the Switch Command
