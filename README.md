@@ -60,6 +60,18 @@ This system enables seamless switching between:
 
 ---
 
+## 📌 Dependencies
+
+The version requirements listed below are recommended configurations. Our code is designed to be compatible with most mainstream versions of these dependencies, but full compatibility testing has not been completed.
+- [Ubuntu 20.04](https://releases.ubuntu.com/20.04/)
+- [ROS Noetic](https://wiki.ros.org/noetic)
+- [MoveIt](https://moveit.ai/)
+- [Franka ROS Interface](https://github.com/frankarobotics/franka_ros)
+- Python ≥3.7
+- [libfranka ≥0.13.0](https://github.com/frankarobotics/libfranka)
+
+---
+
 ## Installation & Configuration
 
 **Environment Setup**
@@ -96,13 +108,44 @@ Includes:
 
 ### 🚀 Controller Usage Examples
 
-### Dynamic Controller Switching
+#### Dynamic Controller Switching
 
-list_controllers() – Check Controller Status
+Dynamic controller switching is the mechanism that allows SonoPilot to transition smoothly between different control strategies (e.g., from free-space movement to tissue contact). 
 
-⚠️ **Rule**: 
-- `start_controllers`: **Only accepts controllers currently in the `stopped` state.**
-- `stop_controllers`: **Only accepts controllers currently in the `running` state.**
+**Fundamental Rules:**
+1.  **Check First**: Always query the system for the current status of all controllers.
+2.  **Match States**:
+    *   `start_controllers`: **Only accepts controllers currently in the `stopped` state.**
+    *   `stop_controllers`: **Only accepts controllers currently in the `running` state.**
+
+##### Step 1: Inspect Current States
+Before issuing any switch command, use `list_controllers()` to print the status table.
+
+```python
+from ForcePosition_calib import MoveItFranka
+franka = MoveItFranka()
+franka.list_controllers()
+```
+
+**Expected Terminal Output:**
+
+```python
+Controller name: position_force_hybird_controller
+Controller state: running
+Controller name: franka_state_controller
+Controller state: running
+Controller name: cartesian_pose_ZJK_controller
+Controller state: stopped
+Controller name: position_force_hybird_controller
+Controller state: running
+Controller name: franka_state_controller
+Controller state: running
+Controller name: cartesian_pose_ZJK_controller
+Controller state: stopped
+```
+
+##### Step 2: Construct the Switch Command
+Based on the output above, construct your `switch_controllers` call.
 
 ```python
 franka.switch_controllers(
@@ -117,6 +160,7 @@ franka.switch_controllers(
 #### Cartesian Position Controller
 
 ```python
+from ForcePosition_calib import MoveItFranka
 franka = MoveItFranka()
 franka.switch_controllers(
     [franka.hybrid_force_position_controller_name],
@@ -127,6 +171,7 @@ franka.switch_controllers(
 #### Impedance Controller
 
 ```python
+from ForcePosition_calib import MoveItFranka
 franka = MoveItFranka()
 franka.hybrid_2_impedance()
 franka.update_param(is_scaning=False, translational_stiffness=300, rotational_stiffness=50)
@@ -135,6 +180,7 @@ franka.update_param(is_scaning=False, translational_stiffness=300, rotational_st
 #### Hybrid Force-Position Controller
 
 ```python
+from ForcePosition_calib import MoveItFranka
 franka = MoveItFranka()
 franka.impedance_2_hybrid()
 franka.update_param(is_scaning=True, ext_force=2)
