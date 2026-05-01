@@ -31,6 +31,8 @@ This workspace serves as the foundational layer for [SonoPilot](https://github.c
 Follow these steps to set up the Franka ROS workspace.
 
 ### 📌 Dependencies
+
+The version requirements listed below are recommended configurations. Our code is designed to be compatible with most mainstream versions of these dependencies, but full compatibility testing has not been completed.
 - [Ubuntu 20.04](https://releases.ubuntu.com/20.04/)
 - [ROS Noetic](https://wiki.ros.org/noetic)
 - [MoveIt](https://moveit.ai/)
