@@ -36,7 +36,9 @@
 │   ├── thynet
 │   ├── thynets
 │   └── vector_db_docx_pubmedbert-base_structured
-└── utils.py
+├── utils.py
+└── video
+    └── sonomind-code.mp4
 ```
 
 ---
@@ -219,6 +221,11 @@ Specify the patient ID in main_UI.py. The default patient ID is 001.
 python main_UI.py
 ```
 
+---
+
+## Demo Video
+
+A demonstration video of the SonoMind workflow is available in the [`video/`](./video) folder. You can refer to this video for a quick overview of the system's capabilities and usage.
 
 ---
 
