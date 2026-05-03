@@ -2,13 +2,14 @@ import json
 from langchain_openai import ChatOpenAI
 import os
 import sys
-from thynet.Hu_Models import Thynet
-from thynets.Models4demo import Thynetv2
+sys.path.append("./tools")
+from thynet.Models import Thynet
+from thynets.Models import Thynetv2
+sys.path.append("./tools/throid_TI-RADS")
 from mmoe.MMOE_IMG import MMoE
 import json
 
 from PIL import Image
-import numpy as np
 from torchvision import transforms
 import torch
 
@@ -20,14 +21,27 @@ class ThynetModel:
         self.model.eval()
         self.patient_ID=patient_ID
     def predict(self):
-        img_root = "SonoMind/patient"
+        """
+        {
+          "model": "thynet",
+          "nodules": [
+            {"nodule_id": 1, "location": ..., "assessment": ...},
+            ...
+          ]
+        }
+        """
+        img_root = "./patient"
         patient_dir = os.path.join(img_root, self.patient_ID)
         if not os.path.isdir(patient_dir):
             raise FileNotFoundError(f"Patient directory not found: {patient_dir}")
         json_files = [f for f in os.listdir(patient_dir) if f.endswith(".json")]
 
         if len(json_files) == 0:
-            raise FileNotFoundError(f"No json file found in {patient_dir}")
+            return {
+                "model": self.model_name,
+                "nodules": [],
+                "summary_sentence": "No thyroid nodules were detected."
+            }
         if len(json_files) > 1:
             raise ValueError(f"Multiple json files found in {patient_dir}: {json_files}")
 
@@ -58,6 +72,7 @@ class ThynetModel:
             with torch.no_grad():
                 inputs = inputs
                 pred = self.model(inputs)
+
                 if pred.argmax(dim=-1) == 0:
                     assessment = 'benign'
                 else:
@@ -93,21 +108,23 @@ class ThynetSModel:
     def __init__(self,patient_ID="001"):
         self.model_name = "thynet-s"
         self.model1 = Thynetv2()
-        self.model1.load_state_dict(torch.load(r'SonoMind/tools/thynets/Hu_Weigh/combine_v2/node_auc.pth'))
         self.model1.eval()
         self.model2 = Thynetv2()
-        self.model2.load_state_dict(torch.load(r'SonoMind/tools/thynets/Hu_Weigh/combine_v2/bm_auc.pth'))
         self.model2.eval()
         self.patient_ID=patient_ID
     def predict(self):
-        img_root = "SonoMind/patient"
+        img_root = "./patient"
         patient_dir = os.path.join(img_root, self.patient_ID)
         if not os.path.isdir(patient_dir):
             raise FileNotFoundError(f"Patient directory not found: {patient_dir}")
         json_files = [f for f in os.listdir(patient_dir) if f.endswith(".json")]
 
         if len(json_files) == 0:
-            raise FileNotFoundError(f"No json file found in {patient_dir}")
+            return {
+                "model": self.model_name,
+                "nodules": [],
+                "summary_sentence": "No thyroid nodules were detected."
+            }
         if len(json_files) > 1:
             raise ValueError(f"Multiple json files found in {patient_dir}: {json_files}")
 
@@ -143,7 +160,7 @@ class ThynetSModel:
                 malign_pred = BM_pred.argmax(dim=-1).item()
                 prob = BM_pred.squeeze()[1].item()
                 if has_nodule == 0:
-                    assessment = 'no nodule'
+                    assessment = 'no nodule' 
                 else:
                     assessment = 'malignant' if malign_pred == 1 else 'benign'
 
@@ -178,19 +195,22 @@ class MMOETool:
         self.model_name = "MMOE"
         self.model = MMoE(num_experts=35, num_feature=1024, bottom_mlp_dims=(512, 256, 128), tower_mlp_dims=(128, 64, 32),
                         dropout=0.2, tasks=(6,5,5,2,2,2,2,2,2,2,5))
-        weight_path = "SonoMind/tools/throid_TI-RADS/throid_TI-RADS/weight/2-TI_RADS/best_f1.pth"
-        self.model.load_state_dict(torch.load(weight_path)['model_state_dict'])
+
         self.model.eval()
         self.patient_ID=patient_ID
     def predict(self):
-        img_root = "SonoMind/patient"
+        img_root = "./patient"
         patient_dir = os.path.join(img_root, self.patient_ID)
         if not os.path.isdir(patient_dir):
             raise FileNotFoundError(f"Patient directory not found: {patient_dir}")
         json_files = [f for f in os.listdir(patient_dir) if f.endswith(".json")]
 
         if len(json_files) == 0:
-            raise FileNotFoundError(f"No json file found in {patient_dir}")
+            return {
+                "model": self.model_name,
+                "nodules": [],
+                "summary_sentence": "No thyroid nodules were detected."
+            }
         if len(json_files) > 1:
             raise ValueError(f"Multiple json files found in {patient_dir}: {json_files}")
 
@@ -219,7 +239,7 @@ class MMOETool:
                                             transforms.ToTensor(),
                                             transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])])
             image = val_transforms(image)
-            image = image.unsqueeze(0)
+            image = image.unsqueeze(0)      
 
             output = self.model(image)
 
@@ -355,7 +375,7 @@ class MMOETool:
 class FollowUpTool:
     def __init__(self,patient_ID="001"):
         self.model_name = "FollowUp"
-        API_KEY = "..."
+        API_KEY = "your_api_key"
         base_url = "https://generativelanguage.googleapis.com/v1beta/openai/"
         model = "gemini-2.5-flash"
         self.llm = ChatOpenAI(model=model, api_key=API_KEY, base_url=base_url)
@@ -394,5 +414,7 @@ class FollowUpTool:
         }
     
 if __name__ == '__main__':
-    tool = MMOETool()
+    # tool = MMOETool()
+    # tool = ThynetModel()
+    tool = ThynetSModel()
     print(tool.predict()) 

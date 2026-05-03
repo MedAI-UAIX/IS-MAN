@@ -3,10 +3,10 @@ import time
 import os
 
 agents = [
-    {"name": "triage_agent", "yaml": "SonoMind/models/triage_agent.yaml", "port": 8000},
-    {"name": "sonographer_agent", "yaml": "SonoMind/models/sonographer_agent.yaml", "port": 8001},
-    {"name": "radiologist_agent", "yaml": "SonoMind/models/radiologist_agent.yaml", "port": 8002},
-    {"name": "physician_agent", "yaml": "SonoMind/models/physician_agent.yaml", "port": 8003},
+    {"name": "orchestrator_agent", "yaml": "SonoMind/models/orchestrator.yaml", "port": 8000},
+    {"name": "sonographer_agent", "yaml": "SonoMind/models/sonographer.yaml", "port": 8001},
+    {"name": "radiologist_agent", "yaml": "SonoMind/models/radiologist.yaml", "port": 8002},
+    {"name": "physician_agent", "yaml": "SonoMind/models/physician.yaml", "port": 8003},
 ]
 
 processes = []
@@ -19,8 +19,6 @@ for agent in agents:
     p = subprocess.Popen(cmd, env=env)
     processes.append(p)
     time.sleep(1)
-
-print("All agents are running. Press Ctrl+C to stop.")
 
 try:
     for p in processes:
