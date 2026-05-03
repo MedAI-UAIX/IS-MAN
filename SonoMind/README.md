@@ -168,6 +168,10 @@ The default weights are used when running the code directly. The weights used fo
 
 ---
 
+### 3. Physician Agent Tools
+
+---
+
 ## Quickstart
 We provide a demo to test the feasibility of the SonoMind workflow.
 
