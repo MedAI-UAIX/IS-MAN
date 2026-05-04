@@ -340,7 +340,7 @@ The models used in this study include:
 - **[Qwen3-4B](https://huggingface.co/Qwen/Qwen3-4B-Instruct-2507)**
 - **[Qwen3-8B-VL](https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct)**
 
-Model backbones can be downloaded from the corresponding model repositories. Fine-tuned adapters used in this study can be configured through `adapter_name_or_path` in the corresponding YAML files and may be made available for academic use upon reasonable request by contacting the corresponding author Wei Wang ([wangw73@mail.sysu.edu.cn](mailto:wangw73@mail.sysu.edu.cn))
+Model backbones can be downloaded from the corresponding model repositories. Fine-tuned adapters used in this study can be configured through `adapter_name_or_path` in the corresponding YAML files and may be made available for academic use upon reasonable request by contacting the corresponding author.
 
 ##### Step 3. Configure Model YAML Files
 
