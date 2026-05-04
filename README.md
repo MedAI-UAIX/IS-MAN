@@ -462,8 +462,6 @@ python main_UI.py
 
 A demonstration video of the SonoMind workflow is available. You can refer to this video for a quick overview of the system's capabilities and usage.
 
-<video src="https://github.com/MedAI-UAIX/IS-MAN/blob/main/demo/sonomind-code.mp4" controls="controls" width="500" height="300"></video>
-
 ---
 
 ### Model Foundation
