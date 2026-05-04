@@ -389,6 +389,8 @@ conda activate franka
 python SonoPilot.py
 ```
 
+**If no robotic arm is available, you can still verify the code by following the [Quickstart](#Quickstart) guide. In the main UI, click the "Simulate" button located next to the Robot Execution status (as shown in the figure below).**
+
 ---
 
 #### 2. Radiologist Agent Tools
