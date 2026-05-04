@@ -462,6 +462,14 @@ python main_UI.py
 
 A demonstration video of the SonoMind workflow is available. You can refer to this video for a quick overview of the system's capabilities and usage.
 
+
+
+https://github.com/user-attachments/assets/fbd91e40-43a9-4551-913f-6670c958560f
+
+
+
+
+
 ---
 
 ### Model Foundation
