@@ -36,9 +36,7 @@
 │   ├── thynet
 │   ├── thynets
 │   └── vector_db_docx_pubmedbert-base_structured
-├── utils.py
-└── video
-    └── sonomind-code.mp4
+└── utils.py
 ```
 
 ---
@@ -225,7 +223,9 @@ python main_UI.py
 
 ## Demo Video
 
-A demonstration video of the SonoMind workflow is available in the [`SonoMind/video/`](https://github.com/MedAI-UAIX/IS-MAN/tree/main/SonoMind/video) folder. You can refer to this video for a quick overview of the system's capabilities and usage.
+A demonstration video of the SonoMind workflow is available. You can refer to this video for a quick overview of the system's capabilities and usage.
+
+<video src="https://github.com/user-attachments/assets/5920a2a7-2515-4c8d-9eb2-8ce55d8d536d" controls="controls" width="500" height="300"></video>
 
 ---
 
