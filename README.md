@@ -462,7 +462,7 @@ python main_UI.py
 
 ### Demo Video
 
-A demonstration video of the SonoMind workflow is available in the [`SonoMind/video/`](https://github.com/MedAI-UAIX/IS-MAN/tree/main/SonoMind/video) folder. You can refer to this video for a quick overview of the system's capabilities and usage.
+A <video controls src="https://github.com/MedAI-UAIX/IS-MAN/blob/main/demo/sonomind-code.mp4" title="demonstration video"></video> of the SonoMind workflow is available. You can refer to this video for a quick overview of the system's capabilities and usage.
 
 ---
 
