@@ -237,6 +237,9 @@ franka.switch_controllers(
 
 ## SonoMind — Multi-Agent Autonomous Ultrasound
 
+
+![SonoMind System Overview](demo/demo_sonomind.jpg)
+
 ### Repository structure
 
 ```
@@ -389,7 +392,9 @@ conda activate franka
 python SonoPilot.py
 ```
 
-**If no robotic arm is available, you can still verify the code by following the [Quickstart](#Quickstart) guide. In the main UI, click the "Simulate" button located next to the Robot Execution status (as shown in the figure below).**
+**If no robotic arm is available, you can still verify the code by following the [Quickstart](#Quickstart) guide. In the user interface, locate the "Robot Execution" status panel and click the "Simulate" button as shown in the image below.**
+
+![demo_sonomindUI](https://github.com/MedAI-UAIX/IS-MAN/blob/main/demo/demo_sonomindUI.png)
 
 ---
 
