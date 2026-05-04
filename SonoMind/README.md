@@ -172,10 +172,10 @@ The default weights are used when running the code directly. The weights used fo
 
 ### 3. Physician Agent Tools
 
-The physician agent utilizes PubMedBERT for analyzing and encoding thyroid guidelines, expert consensus documents and distilled endocrinology knowledge to provide evidence-based clinical decision support.
+The physician agent uses PubMedBERT-indexed guideline knowledge to support evidence-informed clinical recommendations.
 
 #### Model Preparation
-Before running the physician agent, **please manually download the pre-trained PubMedBERT model** from [Hugging Face](https://huggingface.co/NeuML/pubmedbert-base-embeddings/tree/main) and place it into the [`tools/`](https://github.com/MedAI-UAIX/IS-MAN/tree/main/SonoMind/tools) folder.
+Before running the physician agent, **please manually download the pre-trained PubMedBERT model** from [Hugging Face](https://huggingface.co/NeuML/pubmedbert-base-embeddings/tree/main) and place it into the [`SonoMind/tools/`](https://github.com/MedAI-UAIX/IS-MAN/tree/main/SonoMind/tools) folder.
 
 ---
 
