@@ -1,4 +1,4 @@
-# IS-MAN: a First-in-Clinical Large-Scale Study of LLM-Driven Embodied Intelligence for Supervised Workflow-Level Autonomous Robotic Ultrasound
+# IS-MAN: a First-in-Clinical Large-Scale Study of LLM-Driven Embodied Intelligence for Workflow-Level Autonomous Robotic Ultrasound
 
 ![IS-MANt System Overview](demo/IS-MAN.jpg)
 
