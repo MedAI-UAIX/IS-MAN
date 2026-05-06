@@ -155,7 +155,7 @@ def main():
     print(f"Device:        {args.device}")
     print("=======================================")
 
-    model = load_model(args.checkpoint, args.device)
+    model = load_model(args.weights, args.device)
     inference_single_image(model, args.img_path, args.save_path, args.device)
 
 
