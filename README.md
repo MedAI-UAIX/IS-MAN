@@ -467,7 +467,7 @@ python main_UI.py
 
 ### Demo Video
 
-A demonstration video of the SonoMind workflow is available. You can refer to this video for a quick overview of the system's capabilities and usage.
+You can refer to this video for a quick overview of the system's capabilities and usage.
 
 
 
