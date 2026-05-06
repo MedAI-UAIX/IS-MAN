@@ -609,6 +609,17 @@ python KeypointDetection/inference.py   --weights KeypointDetection/checkpoint/y
 
 ![ouput](demo/demo_keypoint_output.png)
 
+---
+
+### Demo Video
+
+You can refer to this video for a quick overview of the system's capabilities and usage.
+
+
+
+https://github.com/user-attachments/assets/c7d42815-b553-4bae-8326-66bd429e3b5c
+
+
 
 ---
 ---
@@ -714,6 +725,17 @@ python Segmentation/inference.py   --weights Segmentation/checkpoint/best.pth   
 | 2     | Carotid artery | (0, 0, 255)    |
 | 3     | Trachea        | (0, 255, 255)  |
 | 4     | Liver          | (0, 255, 0)    |
+
+---
+
+### Demo Video
+
+You can refer to this video for a quick overview of the system's capabilities and usage.
+
+
+
+https://github.com/user-attachments/assets/a096d351-cd28-4f02-a2e6-91c44522fc6d
+
 
 
 ---
@@ -825,6 +847,18 @@ python LesionDetection/inference.py   --weights LesionDetection/checkpoint/TNS_b
 ###### **Output Image**
 
 ![ouput](demo/demo_detection_output.jpg)
+
+---
+
+### Demo Video
+
+You can refer to this video for a quick overview of the system's capabilities and usage.
+
+
+
+https://github.com/user-attachments/assets/357f1b22-a86b-4b74-bea5-e64b12d6cd12
+
+
 
 ---
 ---
