@@ -99,7 +99,7 @@ def parse_args():
     parser.add_argument(
         "--weights",
         type=str,
-        default="checkpoint/TNS_yolo11m_best.pt",
+        default="checkpoint/TNS_best.pt",
         help="Path to YOLO weights (.pt)"
     )
     parser.add_argument(
