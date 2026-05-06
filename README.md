@@ -493,6 +493,18 @@ These models are trained and accessed using **LLaMAFactory**, following the offi
 
 In building our system, we also leverage **[LangChain](https://github.com/langchain-ai/langchain)** for orchestration.
 
+---
+
+### Notes
+
+This repository provides the SonoMind framework code and configuration templates. The following items are not included in this repository and must be prepared by the user:
+- Pretrained or fine‑tuned model weights (e.g., ThyNet, ThyNet‑S, TI‑RADS classification model).
+- Third‑party models (e.g., PubMedBERT) and any tool‑specific dependencies or environments (e.g., the franka conda environment for the robotic arm).
+- Tool data or indexes (e.g., vector databases) that are used by the tools under tools/.
+Please refer to the instructions in Tools Configuration for detailed setup steps.
+**The code in tools/RobotServer may contain paths or configurations that depend on local environments (e.g., data directories, conda environments, or device IPs).
+Please adjust these paths according to your setup before running the services.**
+
 
 ---
 ---
