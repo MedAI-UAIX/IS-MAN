@@ -73,8 +73,8 @@ python Segmentation/inference.py     --img_path Segmentation/input/thyroid.png  
 
 | Argument       | Type   | Default                                     | Description |
 |----------------|--------|---------------------------------------------|-------------|
-| `--img_path`    | str    | `demo/image/thyroid.png`    | Input ultrasound image |
-| `--checkpoint`   | str    | `checkpoint/best.pth`           | Model weights |
+| `--weights`   | str    | `checkpoint/best.pth`           | Model weights |
+| `--img_path`    | str    | `input/thyroid.png`    | Input ultrasound image |
 | `--save_path`  | str    | `output/thyroid.png`   | Output overlay path |
 | `--device`     | str    | `cuda`                                      | cuda or cpu |
 

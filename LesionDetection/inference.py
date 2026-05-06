@@ -99,19 +99,19 @@ def parse_args():
     parser.add_argument(
         "--weights",
         type=str,
-        default="checkpoint\TNS_yolo11m_best.pt",
+        default="checkpoint/TNS_yolo11m_best.pt",
         help="Path to YOLO weights (.pt)"
     )
     parser.add_argument(
         "--img_path",
         type=str,
-        default="input/test2.jpg",
+        default="input/test1.jpg",
         help="Path to input image"
     )
     parser.add_argument(
         "--save_path",
         type=str,
-        default="output/test2.jpg",
+        default="output/test1.jpg",
         help="Path to save result image"
     )
     parser.add_argument(

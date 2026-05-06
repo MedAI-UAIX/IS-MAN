@@ -689,8 +689,8 @@ python Segmentation/inference.py     --img_path Segmentation/input/thyroid.png  
 
 | Argument       | Type   | Default                                     | Description |
 |----------------|--------|---------------------------------------------|-------------|
-| `--img_path`    | str    | `demo/image/thyroid.png`    | Input ultrasound image |
-| `--checkpoint`   | str    | `checkpoint/best.pth`           | Model weights |
+| `--weights`   | str    | `checkpoint/best.pth`           | Model weights |
+| `--img_path`    | str    | `input/thyroid.png`    | Input ultrasound image |
 | `--save_path`  | str    | `output/thyroid.png`   | Output overlay path |
 | `--device`     | str    | `cuda`                                      | cuda or cpu |
 
@@ -814,7 +814,7 @@ python LesionDetection/inference.py   --weights LesionDetection/checkpoint/TNS_b
 |----------------|--------|---------------------------------------------|-------------|
 | `--weights`    | str    | `checkpoint/TNS_best.pt`    | Path to YOLO weights |
 | `--img_path`   | str    | `input/test1.jpg`           | Input ultrasound image |
-| `--save_path`  | str    | `output/test1_result.jpg`   | Output detection result |
+| `--save_path`  | str    | `output/test1.jpg`   | Output detection result |
 | `--device`     | str    | `cuda`                                      | cuda or cpu |
 | `--conf`       | float  | `0.25`                                      | Confidence threshold |
 

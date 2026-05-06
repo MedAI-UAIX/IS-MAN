@@ -124,16 +124,16 @@ def inference_single_image(model, img_path, save_path, device="cuda"):
 def parse_args():
     parser = argparse.ArgumentParser(description="UNet Inference Script")
 
-    parser.add_argument("--img_path", type=str,
-                        default="demo/image/2019053019280148_0_2.png",
-                        help="Path to input image.")
-
-    parser.add_argument("--checkpoint", type=str,
+    parser.add_argument("--weights", type=str,
                         default="checkpoint/best.pth",
                         help="Path to model checkpoint.")
+    
+    parser.add_argument("--img_path", type=str,
+                        default="input/thyroid.png",
+                        help="Path to input image.")
 
     parser.add_argument("--save_path", type=str,
-                        default="output/pred_overlay.png",
+                        default="output/thyroid.png",
                         help="Path to save overlay image.")
 
     parser.add_argument("--device", type=str, default="cuda",
