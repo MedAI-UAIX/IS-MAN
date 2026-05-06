@@ -657,14 +657,10 @@ Download `best.pth` and place it into:
 
 #### 🚀 Inference Usage
 
-The inference script is located at:
+The inference script:
 
-    Segmentation/inference.py
-
-#### **Basic Command**
-
-``` bash
-python Segmentation/inference.py     --img_path Segmentation/input/thyroid.png     --checkpoint Segmentation/checkpoint/best.pth     --save_path Segmentation/output/thyroid.png     --device cuda
+```
+Segmentation/inference.py
 ```
 
 ------------------------------------------------------------------------
@@ -672,7 +668,7 @@ python Segmentation/inference.py     --img_path Segmentation/input/thyroid.png  
 ##### ⚡ CUDA Inference
 
 ``` bash
-python Segmentation/inference.py     --img_path Segmentation/input/thyroid.png     --checkpoint Segmentation/checkpoint/best.pth     --save_path Segmentation/output/thyroid.png     --device cuda
+python Segmentation/inference.py   --weights Segmentation/checkpoint/best.pth   --img_path Segmentation/input/thyroid.png   --save_path Segmentation/output/thyroid.png   --device cuda
 ```
 
 ------------------------------------------------------------------------
@@ -680,7 +676,7 @@ python Segmentation/inference.py     --img_path Segmentation/input/thyroid.png  
 ##### 🖥️ CPU Inference
 
 ``` bash
-python Segmentation/inference.py     --img_path Segmentation/input/thyroid.png     --checkpoint Segmentation/checkpoint/best.pth     --save_path Segmentation/output/thyroid.png     --device cpu
+python Segmentation/inference.py   --weights Segmentation/checkpoint/best.pth   --img_path Segmentation/input/thyroid.png   --save_path Segmentation/output/thyroid.png   --device cpu
 ```
 
 ------------------------------------------------------------------------
