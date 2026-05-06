@@ -107,5 +107,17 @@ python LesionDetection/inference.py   --weights LesionDetection/checkpoint/TNS_b
 
 ---
 
+## Demo Video
+
+You can refer to this video for a quick overview of the system's capabilities and usage.
+
+
+
+https://github.com/user-attachments/assets/7f1b95f7-1c3c-4fba-8846-869ae78e5caf
+
+
+
+---
+
 # 📬 Contact
 For issues or improvements, please open an Issue.
