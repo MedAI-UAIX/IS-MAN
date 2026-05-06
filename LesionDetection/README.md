@@ -87,9 +87,9 @@ python LesionDetection/inference.py   --weights LesionDetection/checkpoint/TNS_b
 
 | Argument       | Type   | Default                                     | Description |
 |----------------|--------|---------------------------------------------|-------------|
-| `--weights`    | str    | `LesionDetection/checkpoint/TNS_best.pt`    | Path to YOLO weights |
-| `--img_path`   | str    | `LesionDetection/input/test1.jpg`           | Input ultrasound image |
-| `--save_path`  | str    | `LesionDetection/output/test1_result.jpg`   | Output detection result |
+| `--weights`    | str    | `checkpoint/TNS_best.pt`    | Path to YOLO weights |
+| `--img_path`   | str    | `input/test1.jpg`           | Input ultrasound image |
+| `--save_path`  | str    | `output/test1_result.jpg`   | Output detection result |
 | `--device`     | str    | `cuda`                                      | cuda or cpu |
 | `--conf`       | float  | `0.25`                                      | Confidence threshold |
 

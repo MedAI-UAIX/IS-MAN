@@ -591,9 +591,9 @@ python KeypointDetection/inference.py   --weights KeypointDetection/checkpoint/y
 
 | Argument       | Type   | Default                                     | Description |
 |----------------|--------|---------------------------------------------|-------------|
-| `--weights`    | str    | `KeypointDetection/checkpoint/yolo11m_pose_best_thy_keypoint.pt`    | Path to pretrained YOLO-Pose weights |
-| `--img_path`   | str    | `KeypointDetection/input/test1.jpg`           | Input image |
-| `--save_path`  | str    | `KeypointDetection/output/thyroid_keypoint_result1.jpg`   | Output detection result |
+| `--weights`    | str    | `checkpoint/yolo11m_pose_best_thy_keypoint.pt`    | Path to pretrained YOLO-Pose weights |
+| `--img_path`   | str    | `input/test1.jpg`           | Input image |
+| `--save_path`  | str    | `output/thyroid_keypoint_result1.jpg`   | Output detection result |
 | `--device`     | str    | `cuda`                                      | cuda or cpu |
 | `--conf`       | float  | `0.3`                                      | Confidence threshold |
 
@@ -812,9 +812,9 @@ python LesionDetection/inference.py   --weights LesionDetection/checkpoint/TNS_b
 
 | Argument       | Type   | Default                                     | Description |
 |----------------|--------|---------------------------------------------|-------------|
-| `--weights`    | str    | `LesionDetection/checkpoint/TNS_best.pt`    | Path to YOLO weights |
-| `--img_path`   | str    | `LesionDetection/input/test1.jpg`           | Input ultrasound image |
-| `--save_path`  | str    | `LesionDetection/output/test1_result.jpg`   | Output detection result |
+| `--weights`    | str    | `checkpoint/TNS_best.pt`    | Path to YOLO weights |
+| `--img_path`   | str    | `input/test1.jpg`           | Input ultrasound image |
+| `--save_path`  | str    | `output/test1_result.jpg`   | Output detection result |
 | `--device`     | str    | `cuda`                                      | cuda or cpu |
 | `--conf`       | float  | `0.25`                                      | Confidence threshold |
 

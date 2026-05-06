@@ -7,11 +7,11 @@ from pathlib import Path
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Thyroid Keypoint Detection Inference')
-    parser.add_argument('--weights', type=str, default='KeypointDetection\checkpoint\yolo11m_pose_best_thy_ketpoint.pt',
+    parser.add_argument('--weights', type=str, default='checkpoint\yolo11m_pose_best_thy_ketpoint.pt',
                         help='Path to pretrained YOLO-Pose weights')
-    parser.add_argument('--img_path', type=str, default='KeypointDetection\input\test1.jpg',
+    parser.add_argument('--img_path', type=str, default='input\test1.jpg',
                         help='Path to input ultrasound image')
-    parser.add_argument('--save_path', type=str, default='KeypointDetection/output/thyroid_keypoint_result1.jpg',
+    parser.add_argument('--save_path', type=str, default='output/thyroid_keypoint_result1.jpg',
                         help='Path to save output result')
     parser.add_argument('--device', type=str, default='cuda',
                         help='Inference device: cuda or cpu')
