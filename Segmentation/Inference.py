@@ -150,7 +150,7 @@ def main():
 
     print("======= Inference Configuration =======")
     print(f"Input Image:   {args.img_path}")
-    print(f"Checkpoint:    {args.checkpoint}")
+    print(f"Checkpoint:    {args.weights}")
     print(f"Save Path:     {args.save_path}")
     print(f"Device:        {args.device}")
     print("=======================================")
