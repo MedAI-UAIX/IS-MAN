@@ -16,5 +16,5 @@ cd "$PROJECT_ROOT/R_03_keypoint"
 # Use Python from environment variables (or activate the environment via conda activate)
 # It is recommended to activate the conda environment first
 
-# 执行Python脚本（使用相对路径）
+# Execute the Python script (using the relative path)
 python "00_detection_v4_cvbridge_点云_奥比中光_yolov8.py"

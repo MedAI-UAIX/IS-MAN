@@ -16,5 +16,5 @@ cd "$PROJECT_ROOT/R_15_CaptureCard"
 # Use Python from environment variables (or activate the environment via conda activate)
 # It is recommended to activate the conda environment first
 
-# 执行Python脚本（使用相对路径）
+# Execute the Python script (using the relative path)
 python "publish_US_cv2.py"
