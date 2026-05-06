@@ -7,7 +7,7 @@ from pathlib import Path
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Thyroid Keypoint Detection Inference')
-    parser.add_argument('--weights', type=str, default='checkpoint\yolo11m_pose_best_thy_ketpoint.pt',
+    parser.add_argument('--weights', type=str, default='checkpoint\yolo11m_pose_best_thy_keypoint.pt',
                         help='Path to pretrained YOLO-Pose weights')
     parser.add_argument('--img_path', type=str, default='input/test1.jpg',
                         help='Path to input ultrasound image')

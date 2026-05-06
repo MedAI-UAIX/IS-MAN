@@ -550,13 +550,13 @@ https://huggingface.co/CJH104/KeypointDetection/tree/main
 Download:
 
 ```
-yolo11m_pose_best_thy_ketpoint.pt
+yolo11m_pose_best_thy_keypoint.pt
 ```
 
 Place the weights here:
 
 ```
-KeypointDetection/checkpoint/yolo11m_pose_best_thy_ketpoint.pt
+KeypointDetection/checkpoint/yolo11m_pose_best_thy_keypoint.pt
 ```
 
 ---
