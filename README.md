@@ -176,6 +176,8 @@ python main_UI.py            # Launch the main interface
 
 > 💡 **Simulation Mode**: If no robotic arm is available, you can still verify the workflow by clicking the "Simulate" button in the Robot Execution status panel of the UI.
 
+> ⚠️ The code may contain paths or configurations that depend on local environments (e.g., data directories, conda environments, or device IPs). Please adjust these paths according to your setup before running the services.
+
 ---
 
 ## License

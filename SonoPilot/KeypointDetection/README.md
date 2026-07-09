@@ -1,17 +1,20 @@
-# Keypoint Detection for Thyroid Localization
+# KeypointDetection — Anatomical Landmark Localization
 
-![Keypoint Overview](https://github.com/MedAI-UAIX/IS-MAN/blob/main/demo/demo_keypoint.jpg)
+![Keypoint Overview](../../demo/demo_keypoint.jpg)
 
-## 🩺 Model Description
+This module performs keypoint detection for thyroid localization. It takes the original ultrasound image as input and outputs the coordinates and confidence scores of the detected anatomical keypoints.
 
-This module is designed to perform keypoint detection tasks. It takes the original image as input and outputs the coordinates and confidence scores of the detected keypoints.
+The predicted sparse keypoints characterize thyroid pose and morphology, enabling stable robotic alignment and scanning trajectory adjustment.
 
-### **Key Features**
-- **Thyroid Localization via Keypoints**  
+---
+
+## Key Features
+
+- **Thyroid Localization via Keypoints**
   Predicts sparse anatomical keypoints that characterize thyroid pose and morphology, enabling stable robotic alignment.
 
-- **High Inference Efficiency**  
-  Powered by [YOLO-Pose](https://github.com/ultralytics/ultralytics) for fast inference suitable for real‑time or near‑real‑time clinical use.
+- **High Inference Efficiency**
+  Powered by [YOLO-Pose](https://github.com/ultralytics/ultralytics) for fast inference suitable for real-time or near-real-time clinical use.
 
 ---
 
@@ -19,84 +22,82 @@ This module is designed to perform keypoint detection tasks. It takes the origin
 
 ```
 KeypointDetection/
-├── README.md
-├── inference.py
+├── checkpoint/
 ├── input/
-└── output/
+├── output/
+├── inference.py
+└── README.md
 ```
 
 ---
 
 ## 📌 Pretrained Weights
 
-Ours YOLO weights can be downloaded from:
+YOLO-Pose weights can be downloaded from:
 
-👉 **HuggingFace Model Hub**  
+👉 **HuggingFace Model Hub**
 https://huggingface.co/CJH104/KeypointDetection/tree/main
 
 Download:
-
 ```
 yolo11m_pose_best_thy_keypoint.pt
 ```
 
 Place the weights here:
-
 ```
 KeypointDetection/checkpoint/yolo11m_pose_best_thy_keypoint.pt
 ```
 
 ---
 
-# 🚀 Inference Usage
+## 🚀 Inference Usage
 
-The inference script:
-
-```
-KeypointDetection/inference.py
-```
-
----
-
-# ⚡ CUDA Inference
+### ⚡ CUDA Inference
 
 ```bash
-python KeypointDetection/inference.py   --weights KeypointDetection/checkpoint/yolo11m_pose_best_thy_keypoint.pt   --img_path KeypointDetection/input/test1.jpg   --save_path KeypointDetection/output/thyroid_keypoint_result1.jpg   --device cuda
+python inference.py \
+    --weights checkpoint/yolo11m_pose_best_thy_keypoint.pt \
+    --img_path input/test1.jpg \
+    --save_path output/thyroid_keypoint_result1.jpg \
+    --device cuda
 ```
 
----
-
-# 🖥️ CPU Inference
+### 🖥️ CPU Inference
 
 ```bash
-python KeypointDetection/inference.py   --weights KeypointDetection/checkpoint/yolo11m_pose_best_thy_keypoint.pt   --img_path KeypointDetection/input/test1.jpg   --save_path KeypointDetection/output/thyroid_keypoint_result1.jpg   --device cpu
+python inference.py \
+    --weights checkpoint/yolo11m_pose_best_thy_keypoint.pt \
+    --img_path input/test1.jpg \
+    --save_path output/thyroid_keypoint_result1.jpg \
+    --device cpu
 ```
 
 ---
 
-# ⚙️ Parameters
+## ⚙️ Parameters
 
-| Argument       | Type   | Default                                     | Description |
-|----------------|--------|---------------------------------------------|-------------|
+| Argument       | Type   | Default                                      | Description |
+|----------------|--------|----------------------------------------------|-------------|
 | `--weights`    | str    | `checkpoint/yolo11m_pose_best_thy_keypoint.pt`    | Path to pretrained YOLO-Pose weights |
-| `--img_path`   | str    | `input/test1.jpg`           | Input image |
-| `--save_path`  | str    | `output/thyroid_keypoint_result1.jpg`   | Output detection result |
-| `--device`     | str    | `cuda`                                      | cuda or cpu |
-| `--conf`       | float  | `0.3`                                      | Confidence threshold |
+| `--img_path`   | str    | `input/test1.jpg`                            | Input image |
+| `--save_path`  | str    | `output/thyroid_keypoint_result1.jpg`        | Output detection result |
+| `--device`     | str    | `cuda`                                       | Device: `cuda` or `cpu` |
+| `--conf`       | float  | `0.3`                                        | Confidence threshold |
 
 ---
 
-# 🖼️ Visualization
+## 🖼️ Visualization
 
-## **Input Image**
+### Input Image
 
-![input](https://github.com/MedAI-UAIX/IS-MAN/blob/main/demo/demo_keypoint_input.png)
+![Input](../../demo/demo_keypoint_input.png)
 
-## **Output Image**
+### Output Image
 
-![ouput](https://github.com/MedAI-UAIX/IS-MAN/blob/main/demo/demo_keypoint_output.png)
+![Output](../../demo/demo_keypoint_output.png)
 
 ---
 
-# 📬 Contact
+## 📬 Contact
+
 For issues or improvements, please open an Issue.

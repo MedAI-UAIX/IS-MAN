@@ -1,25 +1,22 @@
-# Thyroid-nodule detection
+# LesionDetection — Thyroid Nodule Detection
 
-![Thyroid-nodule detection](demo/../../demo/demo_LesionDetection.jpg)
+![Thyroid Nodule Detection](../../demo/demo_LesionDetection.jpg)
 
-# 🩺 YOLO-Based Thyroid Lesion Detection
+This detection model is specifically designed for **thyroid nodule detection** in ultrasound images. Thyroid nodules (lesions) are common findings in clinical ultrasound examination, and accurate detection is essential for early diagnosis and risk stratification.
 
-## 🩺 Model Description
+The model was trained on real-world thyroid ultrasound images with expert-annotated nodule bounding boxes. It is optimized for the characteristics of **B-mode ultrasound**, including noise patterns, low contrast, and variable imaging quality.
 
-This detection model is specifically designed for **thyroid nodule detection** in ultrasound images.  
-Thyroid nodules (lesions) are common findings in clinical ultrasound examination, and accurate detection is essential for early diagnosis and risk stratification.
+---
 
-The model was trained on real-world thyroid ultrasound images with expert-annotated nodule bounding boxes.  
-It is optimized for the characteristics of **B-mode ultrasound**, including noise patterns, low contrast, and variable imaging quality.
+## Key Features
 
-### **Key Features**
-- **Thyroid Nodule Detection**  
+- **Thyroid Nodule Detection**
   Accurately locates potential thyroid lesions using bounding boxes.
 
-- **High Inference Efficiency**  
+- **High Inference Efficiency**
   Built on the Ultralytics YOLO framework, supporting real-time or near real-time inference on both GPU (CUDA) and CPU.
 
--  **Designed for Medical Ultrasound**  
+- **Designed for Medical Ultrasound**
   Tailored for grayscale thyroid ultrasound imaging scenarios.
 
 ---
@@ -28,84 +25,84 @@ It is optimized for the characteristics of **B-mode ultrasound**, including nois
 
 ```
 LesionDetection/
-├── README.md
-├── inference.py
+├── checkpoint/
 ├── input/
-└── output/
+├── output/
+├── inference.py
+└── README.md
 ```
 
 ---
 
 ## 📌 Pretrained Weights
 
-Ours YOLO weights can be downloaded from:
+YOLO weights can be downloaded from:
 
-👉 **HuggingFace Model Hub**  
+👉 **HuggingFace Model Hub**
 https://huggingface.co/CJH104/ThyroidLesionDetection/tree/main
 
 Download:
-
 ```
 TNS_best.pt
 ```
 
 Place the weights here:
-
 ```
 LesionDetection/checkpoint/TNS_best.pt
 ```
 
 ---
 
-# 🚀 Inference Usage
+## 🚀 Inference Usage
 
-The inference script:
-
-```
-LesionDetection/inference.py
-```
-
----
-
-# ⚡ CUDA Inference
+### ⚡ CUDA Inference
 
 ```bash
-python LesionDetection/inference.py   --weights LesionDetection/checkpoint/TNS_best.pt   --img_path LesionDetection/input/test1.jpg   --save_path LesionDetection/output/test1.jpg   --device cuda   --conf 0.25
+python inference.py \
+    --weights checkpoint/TNS_best.pt \
+    --img_path input/test1.jpg \
+    --save_path output/test1.jpg \
+    --device cuda \
+    --conf 0.25
 ```
 
----
-
-# 🖥️ CPU Inference
+### 🖥️ CPU Inference
 
 ```bash
-python LesionDetection/inference.py   --weights LesionDetection/checkpoint/TNS_best.pt   --img_path LesionDetection/input/test2.jpg   --save_path LesionDetection/output/test2.jpg   --device cpu   --conf 0.25
+python inference.py \
+    --weights checkpoint/TNS_best.pt \
+    --img_path input/test2.jpg \
+    --save_path output/test2.jpg \
+    --device cpu \
+    --conf 0.25
 ```
 
 ---
 
-# ⚙️ Parameters
+## ⚙️ Parameters
 
-| Argument       | Type   | Default                                     | Description |
-|----------------|--------|---------------------------------------------|-------------|
-| `--weights`    | str    | `checkpoint/TNS_best.pt`    | Path to YOLO weights |
-| `--img_path`   | str    | `input/test1.jpg`           | Input ultrasound image |
-| `--save_path`  | str    | `output/test1.jpg`   | Output detection result |
-| `--device`     | str    | `cuda`                                      | cuda or cpu |
-| `--conf`       | float  | `0.25`                                      | Confidence threshold |
-
----
-
-# 🖼️ Visualization
-
-## **Input Image**
-
-![input](demo/../../demo/demo_detection_input.jpg)
-
-## **Output Image**
-
-![ouput](demo/../../demo/demo_detection_output.jpg)
+| Argument       | Type   | Default                  | Description |
+|----------------|--------|--------------------------|-------------|
+| `--weights`    | str    | `checkpoint/TNS_best.pt`      | Path to YOLO weights |
+| `--img_path`   | str    | `input/test1.jpg`        | Input ultrasound image |
+| `--save_path`  | str    | `output/test1.jpg`       | Output detection result |
+| `--device`     | str    | `cuda`                   | Device: `cuda` or `cpu` |
+| `--conf`       | float  | `0.25`                   | Confidence threshold |
 
 ---
 
-# 📬 Contact
+## 🖼️ Visualization
+
+### Input Image
+
+![Input](../../demo/demo_detection_input.jpg)
+
+### Output Image
+
+![Output](../../demo/demo_detection_output.jpg)
+
+---
+
+## 📬 Contact
+
 For issues or improvements, please open an Issue.

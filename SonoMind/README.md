@@ -1,46 +1,58 @@
-# SonoMind — Multi-Agent Autonomous Ultrasound
+# SonoMind — Multi-Agent Autonomous Ultrasound System
 
+![SonoMind System Overview](../demo/demo_sonomind.jpg)
 
-![SonoMind System Overview](https://github.com/MedAI-UAIX/IS-MAN/blob/main/demo/demo_sonomind.jpg)
+SonoMind is the LLM-orchestrated multi-agent cognitive framework that coordinates the entire autonomous ultrasound workflow, from patient triage to final clinical recommendations. It comprises four specialized agent roles that work in concert under the guidance of a central orchestrator.
 
-## Repository structure
+---
+
+## Repository Structure
 
 ```
-.
-├── agents
+SonoMind/
+├── agents/                    # 👥 Four Role Agents
 │   ├── orchestrator.py
 │   ├── physician.py
 │   ├── radiologist.py
 │   └── sonographer.py
-├── main_UI.py
-├── models
+├── models/                    # 📦 Model Configuration & API Launcher
 │   ├── orchestrator.yaml
 │   ├── physician.yaml
 │   ├── radiologist.yaml
 │   ├── run_agents.py
 │   └── sonographer.yaml
-├── patient
-│   └── 001
-├── prompt
+├── prompt/                    # 📝 Agent Prompt Templates
 │   ├── orchestrator_prompt.py
 │   ├── physician_prompt.py
 │   ├── radiologist_prompt.py
 │   └── sonographer_prompt.py
-├── README.md
-├── requirements.txt
-├── tools
+├── tools/                     # 🔧 Perception & Clinical Toolkits
 │   ├── build_vector_db.py
 │   ├── FrankaRequest.py
-│   ├── pubmedbert-base
 │   ├── radiologist_tools.py
-│   ├── RobotServer
-│   ├── SonoPilot.py
-│   ├── throid_TI-RADS
-│   ├── thynet
-│   ├── thynets
-│   └── vector_db_docx_pubmedbert-base_structured
-└── utils.py
+│   ├── throid_TI-RADS/
+│   ├── thynet/
+│   ├── thynets/
+│   └── vector_db_docx_pubmedbert-base_structured/
+├── patient/                   # 📋 Patient Data Directory
+│   └── 001/
+├── main_UI.py                 # 🖥️ Main User Interface
+├── sonopilot2sonomind.py      # 🔗 SonoPilot ↔ SonoMind Bridge
+├── utils.py
+├── requirements.txt
+└── README.md
 ```
+
+---
+
+## Agent Roles
+
+| Agent | Role | Key Responsibilities |
+|-------|------|---------------------|
+| **Orchestrator** | Workflow Manager | Task planning, agent dispatching, workflow coordination |
+| **Sonographer** | Scanning Specialist | Robotic arm control, image acquisition guidance, scan quality assessment |
+| **Radiologist** | Image Analyst | Nodule detection, TI-RADS classification, benign/malignant differentiation |
+| **Physician** | Clinical Advisor | Evidence-based recommendations, follow-up planning, guideline-based advice |
 
 ---
 
@@ -51,7 +63,6 @@ SonoMind supports different large language models through API-based model servic
 ### 1. Using Commercial API Providers
 
 To use commercial API providers, obtain an API key and base URL from at least one supported provider, such as:
-
 - [OpenAI](https://platform.openai.com/)
 - [Anthropic Claude](https://console.anthropic.com/)
 - [Google Gemini](https://ai.google.dev/)
@@ -61,14 +72,13 @@ Then specify the key and endpoint URLs in `main_UI.py`:
 
 ```python
 API_KEY = "your_api_key"
-
 orchestrator_base_url = "your_orchestrator_base_url"
 sonographer_base_url = "your_sonographer_base_url"
 radiologist_base_url = "your_radiologist_base_url"
 physician_base_url = "your_physician_base_url"
 ```
 
-Each agent can be configured with a different model service. 
+Each agent can be configured with a different model service.
 
 ---
 
@@ -81,10 +91,8 @@ In this study, local large language models were deployed as API services using [
 ```bash
 git clone --depth 1 https://github.com/hiyouga/LlamaFactory.git
 cd LlamaFactory
-
 conda create -n llamafactory python=3.10
 conda activate llamafactory
-
 pip install -e .
 pip install -r requirements/metrics.txt
 ```
@@ -92,13 +100,11 @@ pip install -r requirements/metrics.txt
 #### Step 2. Download Model Weights
 
 Download the required model weights and place them under:
-
 ```bash
 SonoMind/models/
 ```
 
 The models used in this study include:
-
 - **[Qwen3-8B](https://huggingface.co/Qwen/Qwen3-8B)**
 - **[Qwen3-4B](https://huggingface.co/Qwen/Qwen3-4B-Instruct-2507)**
 - **[Qwen3-8B-VL](https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct)**
@@ -108,7 +114,6 @@ Model backbones can be downloaded from the corresponding model repositories. Fin
 #### Step 3. Configure Model YAML Files
 
 Configure the model YAML files in:
-
 ```bash
 SonoMind/models/
 ```
@@ -120,7 +125,6 @@ Each YAML file should specify the base model path, optional adapter path, prompt
 #### Step 4. Start Local Model API Services
 
 Run:
-
 ```bash
 python SonoMind/models/run_agents.py
 ```
@@ -130,10 +134,8 @@ This script launches the configured local models as API services.
 #### Step 5. Update API URLs
 
 Copy the generated API URLs into `main_UI.py`:
-
 ```python
 API_KEY = "0"  # default value for local model services
-
 orchestrator_base_url = "your_orchestrator_base_url"
 sonographer_base_url = "your_sonographer_base_url"
 radiologist_base_url = "your_radiologist_base_url"
@@ -152,12 +154,13 @@ The sonographer agent interacts with the robotic arm control API. Start the robo
 
 ```bash
 conda activate franka
+cd ../SonoPilot
 python SonoPilot.py
 ```
 
-**If no robotic arm is available, you can still verify the code by following the [Quickstart](#Quickstart) guide. In the user interface, locate the "Robot Execution" status panel and click the "Simulate" button as shown in the image below.**
+**If no robotic arm is available, you can still verify the code by following the [Quickstart](#quickstart) guide. In the user interface, locate the "Robot Execution" status panel and click the "Simulate" button as shown in the image below.**
 
-![demo_sonomindUI](https://github.com/MedAI-UAIX/IS-MAN/blob/main/demo/demo_sonomindUI.png)
+![demo_sonomindUI](../demo/demo_sonomindUI.png)
 
 ---
 
@@ -180,18 +183,19 @@ The default weights are used when running the code directly. The weights used fo
 The physician agent uses PubMedBERT-indexed guideline knowledge to support evidence-informed clinical recommendations.
 
 #### Model Preparation
-Before running the physician agent, **please manually download the pre-trained PubMedBERT model** from [Hugging Face](https://huggingface.co/NeuML/pubmedbert-base-embeddings/tree/main) and place it into the [`SonoMind/tools/`](https://github.com/MedAI-UAIX/IS-MAN/tree/main/SonoMind/tools) folder.
+
+Before running the physician agent, **please manually download the pre-trained PubMedBERT model** from [Hugging Face](https://huggingface.co/NeuML/pubmedbert-base-embeddings/tree/main) and place it into the `SonoMind/tools/` folder.
 
 ---
 
 ## Quickstart
+
 We provide a demo to test the feasibility of the SonoMind workflow.
 
 ### 1. Clone the Repository and Create a Virtual Environment
 
 ```bash
 cd SonoMind
-
 conda create -n sonomind python=3.10
 conda activate sonomind
 ```
@@ -211,7 +215,7 @@ If you use the robotic arm, also start the sonographer tool API as described in 
 ### 4. Start the Agent Services
 
 ```bash
-python SonoMind/models/run_agents.py
+python models/run_agents.py
 ```
 
 > **Note:** If your local machine has limited computational resources, you can deploy the agents on a remote server. However, to minimize latency and ensure the safety of the robotic arm, it is strongly recommended to deploy the sonographer agent on the same machine that directly controls the robotic arm.
@@ -220,7 +224,7 @@ python SonoMind/models/run_agents.py
 
 Specify the patient ID in main_UI.py. The default patient ID is 001.
 
-### 5. Run a Simple Inference Demo
+### 6. Run a Simple Inference Demo
 
 ```bash
 python main_UI.py
@@ -232,23 +236,18 @@ python main_UI.py
 
 You can refer to this video for a quick overview of the system's capabilities and usage.
 
-
-
 https://github.com/user-attachments/assets/8aa79891-08ea-4dae-ab16-3343e0fedeaf
-
-
 
 ---
 
 ## Model Foundation
 
 Our system is built upon the **Qwen3 family of models**, including:
-
 - **[Qwen3-8B](https://huggingface.co/Qwen/Qwen3-8B)**
 - **[Qwen3-4B](https://huggingface.co/Qwen/Qwen3-4B-Instruct-2507)**
 - **[Qwen3-8B-VL](https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct)**
 
-These models are trained and accessed using **LLaMAFactory**, following the official implementations and usage guidelines provided by the Qwen team. We sincerely appreciate their contributions to the open-source community.  
+These models are trained and accessed using **LLaMAFactory**, following the official implementations and usage guidelines provided by the Qwen team. We sincerely appreciate their contributions to the open-source community.
 
 - **[LLaMAFactory Repository](https://github.com/hiyouga/LLaMA-Factory/tree/main)**
 
@@ -259,10 +258,9 @@ In building our system, we also leverage **[LangChain](https://github.com/langch
 ## Notes
 
 This repository provides the SonoMind framework code and configuration templates. The following items are not included in this repository and must be prepared by the user:
+
 - Pretrained or fine‑tuned model weights (e.g., ThyNet, ThyNet‑S, TI‑RADS classification model).
 - Third‑party models (e.g., PubMedBERT) and any tool‑specific dependencies or environments (e.g., the franka conda environment for the robotic arm).
 - Tool data or indexes (e.g., vector databases) that are used by the tools under tools/.
 
 Please refer to the instructions in Tools Configuration for detailed setup steps.
-**The code in tools/RobotServer may contain paths or configurations that depend on local environments (e.g., data directories, conda environments, or device IPs).
-Please adjust these paths according to your setup before running the services.**
