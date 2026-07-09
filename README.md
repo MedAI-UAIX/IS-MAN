@@ -144,14 +144,18 @@ roslaunch franka_example_controllers position_force_example.launch
 
 #### 6. Install Dependencies (SonoPilot)
 
+```bash
 cd ../SonoPilot
 pip install -r requirements.txt
+```
 
 #### 7. Install Dependencies (SonoMind)
 
+```bash
 cd ../SonoMind
 pip install -r requirements.txt
 #### Download Qwen3 models (Configure path in models/config.yaml)
+```
 
 #### 8. Run the System
 
