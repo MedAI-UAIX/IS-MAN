@@ -98,5 +98,17 @@ python KeypointDetection/inference.py   --weights KeypointDetection/checkpoint/y
 
 ---
 
+## Demo Video
+
+You can refer to this video for a quick overview of the system's capabilities and usage.
+
+
+
+https://github.com/user-attachments/assets/9032651d-f1c5-4b73-bbb2-143ded063e74
+
+
+
+---
+
 # 📬 Contact
 For issues or improvements, please open an Issue.

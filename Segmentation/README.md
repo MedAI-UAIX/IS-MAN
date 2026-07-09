@@ -99,6 +99,17 @@ python Segmentation/inference.py   --weights Segmentation/checkpoint/best.pth   
 | 3     | Trachea        | (0, 255, 255)  |
 | 4     | Liver          | (0, 255, 0)    |
 
+---
+
+## Demo Video
+
+You can refer to this video for a quick overview of the system's capabilities and usage.
+
+
+
+https://github.com/user-attachments/assets/5dead24b-6483-47fa-a9bc-74e2318dfebb
+
+
 
 ---
 
