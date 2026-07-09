@@ -159,14 +159,14 @@ pip install -r requirements.txt
 
 #### 8. Run the System
 
-**Start the Robot Control Server (SonoPilot):**
+Start the Robot Control Server (SonoPilot):
 ```bash
 conda activate franka
 cd SonoPilot
 python SonoPilot.py
 ```
 
-**Start the Multi-Agent System (SonoMind):**
+Start the Multi-Agent System (SonoMind):
 ```bash
 conda activate sonomind
 cd SonoMind
