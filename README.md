@@ -98,7 +98,7 @@ Contains sample images, architecture diagrams, and UI screenshots demonstrating 
 
 ---
 
-## Quick Start
+## Installation
 
 ### Prerequisites
 
@@ -107,36 +107,53 @@ Contains sample images, architecture diagrams, and UI screenshots demonstrating 
 - Python ≥ 3.10
 - Conda (recommended for environment management)
 
-### 1. Clone the Repository
+### Setup
+
+#### 1. **Clone the repository**
 
 ```bash
 git clone https://github.com/MedAI-UAIX/IS-MAN.git
-cd IS-MAN
+cd IS-MAN/Franka_ws
 ```
 
-### 2. Set Up SonoPilot Environment
+#### 2. **Build the workspace**
 
 ```bash
-conda create -n franka python=3.10
-conda activate franka
-pip install -r SonoPilot/requirements.txt
+catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python3
 ```
 
-### 3. Set Up SonoMind Environment
+#### 3. **Source ROS workspace**
 
 ```bash
-conda create -n sonomind python=3.10
-conda activate sonomind
-pip install -r SonoMind/requirements.txt
+source devel/setup.bash
 ```
 
-### 4. Configure Models & Tools
+#### 4. **Start ROS Master**
 
-- **LLM Models**: Configure API endpoints or deploy local models following the [SonoMind Model Configuration](SonoMind/README.md#model-configuration) guide.
-- **Perception Weights**: Download pretrained weights for segmentation, detection, and keypoint models from HuggingFace (links provided in each sub-module README).
-- **PubMedBERT**: Download for the physician agent's guideline knowledge base.
+Open the first terminal and start the ROS core:
+```bash
+roscore
+```
 
-### 5. Run the System
+#### 5. **Launch Position-Force Controller**
+
+Open a second terminal and launch the controller:
+```bash
+roslaunch franka_example_controllers position_force_example.launch
+```
+
+#### 6. Install Dependencies (SonoPilot)
+
+cd ../SonoPilot
+pip install -r requirements.txt
+
+#### 7. Install Dependencies (SonoMind)
+
+cd ../SonoMind
+pip install -r requirements.txt
+#### Download Qwen3 models (Configure path in models/config.yaml)
+
+#### 8. Run the System
 
 **Start the Robot Control Server (SonoPilot):**
 ```bash
