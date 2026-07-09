@@ -154,7 +154,7 @@ pip install -r requirements.txt
 ```bash
 cd ../SonoMind
 pip install -r requirements.txt
-#### Download Qwen3 models (Configure path in models/config.yaml)
+# Download Qwen3 models (Configure path in models/config.yaml)
 ```
 
 #### 8. Run the System
