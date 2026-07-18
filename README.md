@@ -1,4 +1,4 @@
-# LLM-driven embodied intelligence for workflow-level autonomous robotic ultrasound: a dual-center prospective randomized crossover study
+# IS-MAN: Large-scale clinical validation of an LLM-driven embodied intelligence system for autonomous robotic ultrasound
 
 ![IS-MAN System Overview](demo/IS-MAN.jpg)
 
