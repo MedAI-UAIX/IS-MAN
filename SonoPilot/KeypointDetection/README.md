@@ -98,6 +98,18 @@ python inference.py \
 
 ---
 
+## Demo Video
+
+You can refer to this video for a quick overview of the system's capabilities and usage.
+
+
+
+https://github.com/user-attachments/assets/c44117e5-19a7-46cc-93b8-bd4d6dd5781f
+
+
+
+---
+
 ## 📬 Contact
 
 For issues or improvements, please open an Issue.
