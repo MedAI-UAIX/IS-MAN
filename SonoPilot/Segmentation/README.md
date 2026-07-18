@@ -95,6 +95,18 @@ python Inference.py \
 
 ---
 
+## Demo Video
+
+You can refer to this video for a quick overview of the system's capabilities and usage.
+
+
+
+https://github.com/user-attachments/assets/42a10968-a380-4209-8635-5ddea7e3e71f
+
+
+
+---
+
 ## 📬 Contact
 
 For issues or improvements, please open an Issue.
