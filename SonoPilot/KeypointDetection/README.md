@@ -52,6 +52,8 @@ KeypointDetection/checkpoint/yolo11m_pose_best_thy_keypoint.pt
 
 ## 🚀 Inference Usage
 
+On our system, inference typically takes approximately 100–150 ms per image, including preprocessing, model inference, and postprocessing, corresponding to approximately 7–10 FPS. The actual runtime may vary depending on the GPU/CPU model, CUDA version, input image resolution, and system load.
+
 ### ⚡ CUDA Inference
 
 ```bash
