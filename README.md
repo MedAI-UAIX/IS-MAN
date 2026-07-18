@@ -109,6 +109,8 @@ Contains sample images, architecture diagrams, and UI screenshots demonstrating 
 
 ### Setup
 
+Installation typically takes approximately 1–2 hours on our system, including ROS environment setup, libfranka compilation, and dependency installation. The actual time may vary depending on hardware configuration and network conditions.
+
 #### 1. **Clone the repository**
 
 ```bash
